@@ -16,11 +16,12 @@ public class FactoryController(
     IMapper _mapper) : ControllerBase
 {
     [HttpGet()]
-    public ActionResult<IEnumerable<FactoryResponseModel>> Search([FromQuery] Guid? playthroughId)
+    public ActionResult<IEnumerable<Factory>> Search([FromQuery] Guid? playthroughId)
     {        
         var query = _applicationContext
                         .Factories
-                        .Include(f => f.Machines).ThenInclude(m => m.Recipe)
+                        .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
+                        .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
                         .AsQueryable();
 
         if (playthroughId.HasValue)
@@ -30,11 +31,11 @@ public class FactoryController(
 
         var results = query.ToList();
 
-        return _mapper.Map<List<FactoryResponseModel>>(results);
+        return results;
     }
 
     [HttpGet("{id}")]
-    public ActionResult<FactoryResponseModel> Get(Guid id)
+    public ActionResult<Factory> Get(Guid id)
     {        
         var factory = _applicationContext.Factories
             .Where(p => p.Id == id)
@@ -45,9 +46,7 @@ public class FactoryController(
         if (factory == null)
             return new NotFoundResult();
 
-        var response = _mapper.Map<FactoryResponseModel>(factory);
-
-        return response;
+        return factory;
     }
 
     [HttpGet("{id}/Summary")]
@@ -68,7 +67,7 @@ public class FactoryController(
         {
             responseTotals.Add(new FactorySummaryTotalModel()
             {
-                ProductionItem = _mapper.Map<ProductionItemSummaryResponseModel>(balance.Key),
+                ProductionItem = balance.Key,
                 Amount = balance.Value
             });
         }
@@ -81,7 +80,7 @@ public class FactoryController(
     }
 
     [HttpPost]
-    public ActionResult<FactoryResponseModel> Create([FromQuery] Guid playthroughId, [FromQuery] string name)
+    public ActionResult<Factory> Create([FromQuery] Guid playthroughId, [FromQuery] string name)
     {
         var factory = new Factory()
         {
@@ -93,6 +92,6 @@ public class FactoryController(
         _applicationContext.Factories.Add(factory);
         _applicationContext.SaveChanges();
 
-        return _mapper.Map<FactoryResponseModel>(factory);
+        return factory;
     }
 }

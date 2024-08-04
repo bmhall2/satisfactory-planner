@@ -1,3 +1,4 @@
+using SatisfactoryPlanner.API.Models;
 using SatisfactoryPlanner.API.Services;
 
 namespace SatisfactoryPlanner.API.ResponseModels;
@@ -17,6 +18,6 @@ public class FactorySummaryResponseModel
 
 public class FactorySummaryTotalModel
 {
-    public required ProductionItemSummaryResponseModel ProductionItem { get; set;}
+    public required ProductionItem ProductionItem { get; set;}
     public required decimal Amount { get; set; }
 }

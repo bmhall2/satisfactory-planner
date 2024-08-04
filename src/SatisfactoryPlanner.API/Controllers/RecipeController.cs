@@ -1,19 +1,17 @@
 using SatisfactoryPlanner.API.Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
-using SatisfactoryPlanner.API.ResponseModels;
+using SatisfactoryPlanner.API.Models;
 
 namespace SatisfactoryPlanner.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class RecipeController(
-    ApplicationContext _applicationContext,
-    IMapper _mapper) : ControllerBase
+    ApplicationContext _applicationContext) : ControllerBase
 {
     [HttpGet()]
-    public ActionResult<IEnumerable<RecipeResponseModel>> Search([FromQuery] string? term)
+    public ActionResult<IEnumerable<Recipe>> Search([FromQuery] string? term)
     {        
         var query = _applicationContext
                         .Recipes
@@ -31,11 +29,11 @@ public class RecipeController(
 
         var results = query.ToList();
 
-        return _mapper.Map<List<RecipeResponseModel>>(results);
+        return results;
     }
 
     [HttpGet("{id}")]
-    public ActionResult<RecipeResponseModel> Get(Guid id)
+    public ActionResult<Recipe> Get(Guid id)
     {        
         var result = _applicationContext
                         .Recipes
@@ -46,6 +44,6 @@ public class RecipeController(
         if (result == null)
             return new NotFoundResult();
 
-        return _mapper.Map<RecipeResponseModel>(result);
+        return result;
     }
 }
