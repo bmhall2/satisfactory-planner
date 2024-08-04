@@ -9,6 +9,8 @@ public class Recipe
 
     public required string Name { get; set; }
 
+    public required MachineType MadeIn { get; set; }
+
     public List<RecipeIngredient> Ingredients { get; set; } = new List<RecipeIngredient>();
 
     public List<RecipeResult> Results { get; set; } = new List<RecipeResult>();

@@ -18,10 +18,8 @@ public class MappingProfile : Profile
         CreateMap<Recipe, RecipeSummaryResponseModel>();
 
         CreateMap<RecipeIngredient, RecipeIngredientResponseModel>();
-        CreateMap<RecipeIngredient, RecipeIngredientSummaryResponseModel>();
 
         CreateMap<RecipeResult, RecipeResultResponseModel>();
-        CreateMap<RecipeResult, RecipeResultSummaryResponseModel>();
 
         CreateMap<ProductionItem, ProductionItemResponseModel>();
         CreateMap<ProductionItem, ProductionItemSummaryResponseModel>();

@@ -4,6 +4,7 @@ namespace SatisfactoryPlanner.API.ResponseModels;
 
 public class MachineSummaryResponseModel
 {
+    public required Guid Id { get; set;}
     public required MachineType MachineType { get; set; }
 
     public required RecipeSummaryResponseModel Recipe { get; set;}

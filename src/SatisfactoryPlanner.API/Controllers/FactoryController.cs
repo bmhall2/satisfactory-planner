@@ -45,8 +45,6 @@ public class FactoryController(
         if (factory == null)
             return new NotFoundResult();
 
-        factory = _factoryCalculationService.CalculateProductionRates(factory);
-
         var response = _mapper.Map<FactoryResponseModel>(factory);
 
         return response;
@@ -77,6 +75,7 @@ public class FactoryController(
 
         var response = _mapper.Map<FactorySummaryResponseModel>(factory);
         response.Balances = responseTotals;
+        response.MachineOutputs = summary.MachineOutputs.OrderBy(mo => mo.MachineType).ToList();
 
         return response;
     }

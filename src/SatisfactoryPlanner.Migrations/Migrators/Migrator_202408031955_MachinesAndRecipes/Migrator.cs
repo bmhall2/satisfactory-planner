@@ -14,6 +14,9 @@ public class Migrator_202408031955_MachinesAndRecipes : Migration
         Create.ForeignKey()
             .FromTable("Machine").ForeignColumn("RecipeId")
             .ToTable("Recipe").PrimaryColumn("Id");
+
+        Alter.Table("Recipe")
+            .AddColumn("MadeIn").AsInt16();
     }
 
     public override void Down()

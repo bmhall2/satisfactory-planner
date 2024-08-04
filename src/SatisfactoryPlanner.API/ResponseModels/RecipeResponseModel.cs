@@ -1,3 +1,5 @@
+using SatisfactoryPlanner.API.Models;
+
 namespace SatisfactoryPlanner.API.ResponseModels;
 
 public class RecipeResponseModel
@@ -6,7 +8,9 @@ public class RecipeResponseModel
 
     public required string Name { get; set; }
 
+    public required MachineType MadeIn { get; set; }
+
     public List<RecipeIngredientResponseModel> Ingredients { get; set; } = new List<RecipeIngredientResponseModel>();
 
-    public List<RecipeResultSummaryResponseModel> Results { get; set; } = new List<RecipeResultSummaryResponseModel>();
+    public List<RecipeResultResponseModel> Results { get; set; } = new List<RecipeResultResponseModel>();
 }

@@ -13,13 +13,21 @@ public class RecipeController(
     IMapper _mapper) : ControllerBase
 {
     [HttpGet()]
-    public ActionResult<IEnumerable<RecipeResponseModel>> Search()
+    public ActionResult<IEnumerable<RecipeResponseModel>> Search([FromQuery] string? term)
     {        
         var query = _applicationContext
                         .Recipes
                         .Include(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
                         .Include(r => r.Results).ThenInclude(r => r.ProductionItem)
                         .AsQueryable();
+        
+        if (!string.IsNullOrEmpty(term))
+        {
+            query = query.Where(r => 
+                r.Name.ToLower().Contains(term.ToLower()) ||
+                r.Results.Any(result => result.ProductionItem.Name.ToLower().Contains(term.ToLower()))
+            );
+        }
 
         var results = query.ToList();
 
@@ -40,20 +48,4 @@ public class RecipeController(
 
         return _mapper.Map<RecipeResponseModel>(result);
     }
-
-    // [HttpPost]
-    // public ActionResult<Factory> Create([FromQuery] Guid playthroughId, [FromQuery] string name)
-    // {
-    //     var factory = new Factory()
-    //     {
-    //         Id = Guid.NewGuid(),
-    //         PlaythroughId = playthroughId,
-    //         Name = name
-    //     };
-
-    //     _applicationContext.Factories.Add(factory);
-    //     _applicationContext.SaveChanges();
-
-    //     return factory;
-    // }
 }
