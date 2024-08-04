@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F740741C-4330-4FAE-9B98-AB51BFC1B408}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatisfactoryPlanner.API", "src\SatisfactoryPlanner.API\SatisfactoryPlanner.API.csproj", "{47A09E9B-8E7A-4C86-B637-31F58FDF24F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatisfactoryPlanner.Migrations", "src\SatisfactoryPlanner.Migrations\SatisfactoryPlanner.Migrations.csproj", "{98BF58A7-1ACC-4AB8-8573-1BC1391124E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47A09E9B-8E7A-4C86-B637-31F58FDF24F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A09E9B-8E7A-4C86-B637-31F58FDF24F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A09E9B-8E7A-4C86-B637-31F58FDF24F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A09E9B-8E7A-4C86-B637-31F58FDF24F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98BF58A7-1ACC-4AB8-8573-1BC1391124E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98BF58A7-1ACC-4AB8-8573-1BC1391124E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98BF58A7-1ACC-4AB8-8573-1BC1391124E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98BF58A7-1ACC-4AB8-8573-1BC1391124E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47A09E9B-8E7A-4C86-B637-31F58FDF24F8} = {F740741C-4330-4FAE-9B98-AB51BFC1B408}
+		{98BF58A7-1ACC-4AB8-8573-1BC1391124E7} = {F740741C-4330-4FAE-9B98-AB51BFC1B408}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C83B23DA-294F-49EE-AFD6-8005373D8162}
+	EndGlobalSection
+EndGlobal
