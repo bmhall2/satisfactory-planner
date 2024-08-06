@@ -12,4 +12,6 @@ public class Factory
     public required string Name { get; set; }
 
     public List<Machine> Machines { get; set; } = new List<Machine>();
+
+    public List<Miner> Miners { get; set; } = new List<Miner>();
 }

@@ -9,7 +9,7 @@
 :root {
   --color-background: var(--vt-c-slate);
   --color-heading: var(--vt-c-corn);
-  --color-text: var( --vt-c-ghost);
+  --color-text: var(--vt-c-ghost);
 
   --section-gap: 160px;
 }

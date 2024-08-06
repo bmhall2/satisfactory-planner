@@ -27,6 +27,8 @@ public class RecipeController(
             );
         }
 
+        query = query.OrderBy(r => r.MadeIn).ThenBy(r => r.Name);
+
         var results = query.ToList();
 
         return results;
@@ -39,6 +41,7 @@ public class RecipeController(
                         .Recipes
                         .Include(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
                         .Include(r => r.Results).ThenInclude(r => r.ProductionItem)
+                        .Where(r=> r.Id == id)
                         .FirstOrDefault();
         
         if (result == null)

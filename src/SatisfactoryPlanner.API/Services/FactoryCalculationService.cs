@@ -7,6 +7,7 @@ public class FactorySummary
 {
     public Dictionary<ProductionItem, decimal> Balances { get; set; } = new Dictionary<ProductionItem, decimal>();
     public List<MachineOutputSummary> MachineOutputs { get; set; } = new List<MachineOutputSummary>();
+    public List<MinerOutputSummary> MinerOutputs { get; set; } = new List<MinerOutputSummary>();
 }
 
 public class MachineOutputSummary
@@ -16,6 +17,13 @@ public class MachineOutputSummary
     public required RecipeOutputSummary RecipeOutput { get; set;}
 
     public required decimal ClockSpeed { get; set; } = 1;
+}
+
+public class MinerOutputSummary
+{
+    public required ProductionItem ProductionItem { get; set; }
+
+    public required decimal ProducedPerMinute { get; set; }
 }
 
 public class RecipeOutputSummary
@@ -100,6 +108,22 @@ public class FactoryCalculationService(
             machineOutputs.Add(machineOutput);
         }
 
+        var minerOutputs = new List<MinerOutputSummary>();
+        foreach (var miner in factory.Miners)
+        {
+            var clockedProducedPerMinute = (int)miner.NodePurity * (int)miner.Mk * miner.ClockSpeed;
+            if (!balances.TryAdd(miner.ProductionItemId, clockedProducedPerMinute))
+            {
+                balances[miner.ProductionItemId] += clockedProducedPerMinute;
+            }
+
+            minerOutputs.Add(new MinerOutputSummary()
+            {
+                ProductionItem = miner.ProductionItem,
+                ProducedPerMinute = clockedProducedPerMinute
+            });
+        }
+
         var responseBalances = new Dictionary<ProductionItem, decimal>();
         var nonZeroItemIds = balances.Where(b => b.Value != 0).Select(b => b.Key).ToList();
         var items = _applicationContext
@@ -115,7 +139,9 @@ public class FactoryCalculationService(
         return new FactorySummary()
         {
             Balances = responseBalances,
-            MachineOutputs = machineOutputs
+            MachineOutputs = machineOutputs,
+            MinerOutputs = minerOutputs
+            
         };
     }
 }

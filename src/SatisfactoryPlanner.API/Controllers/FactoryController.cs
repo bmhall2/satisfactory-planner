@@ -22,6 +22,7 @@ public class FactoryController(
                         .Factories
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
+                        .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
                         .AsQueryable();
 
         if (playthroughId.HasValue)
@@ -41,6 +42,7 @@ public class FactoryController(
             .Where(p => p.Id == id)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
+            .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
             .FirstOrDefault();
         
         if (factory == null)
@@ -56,6 +58,7 @@ public class FactoryController(
             .Where(p => p.Id == id)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
+            .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
             .FirstOrDefault();
         
         if (factory == null)
@@ -75,6 +78,7 @@ public class FactoryController(
         var response = _mapper.Map<FactorySummaryResponseModel>(factory);
         response.Balances = responseTotals;
         response.MachineOutputs = summary.MachineOutputs.OrderBy(mo => mo.MachineType).ToList();
+        response.MinerOutputs = summary.MinerOutputs;
 
         return response;
     }
