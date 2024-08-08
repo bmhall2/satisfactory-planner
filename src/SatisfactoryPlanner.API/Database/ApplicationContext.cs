@@ -12,4 +12,20 @@ public class ApplicationContext(DbContextOptions options) : DbContext(options)
     public DbSet<Playthrough> Playthroughs { get; set; }
     public DbSet<Factory> Factories { get; set; }
     public DbSet<Machine> Machines { get; set; }
+    public DbSet<FactoryConnection> FactoryConnections { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<FactoryConnection>()
+            .HasOne(fc => fc.ExportingFactory)
+            .WithMany(f => f.ExportConnections)
+            .HasForeignKey(fc => fc.ExportingFactoryId)
+            .IsRequired();
+
+        modelBuilder.Entity<FactoryConnection>()
+            .HasOne(fc => fc.ImportingFactory)
+            .WithMany(f => f.ImportConnections)
+            .HasForeignKey(fc => fc.ImportingFactoryId)
+            .IsRequired();
+    }
 }

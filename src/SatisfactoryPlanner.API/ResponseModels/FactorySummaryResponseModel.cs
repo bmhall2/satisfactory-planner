@@ -16,6 +16,10 @@ public class FactorySummaryResponseModel
     public List<MachineOutputSummary> MachineOutputs { get; set; } = new List<MachineOutputSummary>();
 
     public List<MinerOutputSummary> MinerOutputs { get; set; } = new List<MinerOutputSummary>();
+
+    public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
+    
+    public List<ExportSummary> Exports { get; set; } = new List<ExportSummary>();
 }
 
 public class FactorySummaryTotalModel

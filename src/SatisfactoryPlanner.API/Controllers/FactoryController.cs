@@ -23,6 +23,10 @@ public class FactoryController(
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
                         .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+                        .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
+                        .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
+                        .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
+                        .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
                         .AsQueryable();
 
         if (playthroughId.HasValue)
@@ -43,6 +47,10 @@ public class FactoryController(
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
             .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
+            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
+            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
             .FirstOrDefault();
         
         if (factory == null)
@@ -59,6 +67,10 @@ public class FactoryController(
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
             .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
+            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
+            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
             .FirstOrDefault();
         
         if (factory == null)
@@ -79,6 +91,8 @@ public class FactoryController(
         response.Balances = responseTotals;
         response.MachineOutputs = summary.MachineOutputs.OrderBy(mo => mo.MachineType).ToList();
         response.MinerOutputs = summary.MinerOutputs;
+        response.Imports = summary.Imports;
+        response.Exports = summary.Exports;
 
         return response;
     }

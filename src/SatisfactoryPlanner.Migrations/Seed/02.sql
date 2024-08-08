@@ -1,10 +1,14 @@
 INSERT INTO "Playthrough" ("Id", "Name") VALUES ('71a6eeda-f574-4b85-a822-475ed5dcf099', 'One');
 
 INSERT INTO "Factory" ("Id", "PlaythroughId", "Name") VALUES ('4e212c14-050c-4798-9b36-2e4491863de6', '71a6eeda-f574-4b85-a822-475ed5dcf099', 'Starter Factory');
+INSERT INTO "Factory" ("Id", "PlaythroughId", "Name") VALUES ('c6d7b1e4-9206-4d7b-8627-4c6854c19861', '71a6eeda-f574-4b85-a822-475ed5dcf099', 'Iron Ore Center');
+
+INSERT INTO "FactoryConnection" ("Id", "ExportingFactoryId", "ImportingFactoryId", "ProductionItemId", "Amount")
+VALUES ('5912965b-ef95-46c6-8485-5fcd9a53dcf0', 'c6d7b1e4-9206-4d7b-8627-4c6854c19861', '4e212c14-050c-4798-9b36-2e4491863de6', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 30);
 
 -- IRON ORE MINERS
 INSERT INTO "Miner" ("Id", "FactoryId", "Mk", "NodePurity", "ProductionItemId", "ClockSpeed")
-VALUES ('2363c16c-958e-44b2-99fc-354d783dc4a5', '4e212c14-050c-4798-9b36-2e4491863de6', 1, 60, 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 1.0);
+VALUES ('2363c16c-958e-44b2-99fc-354d783dc4a5', 'c6d7b1e4-9206-4d7b-8627-4c6854c19861', 1, 60, 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 1.0);
 
 -- IRON INGOT SMELTERS
 INSERT INTO "Machine" ("Id", "FactoryId", "MachineType", "RecipeId", "ClockSpeed")

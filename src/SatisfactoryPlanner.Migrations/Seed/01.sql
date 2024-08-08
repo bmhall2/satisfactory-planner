@@ -162,6 +162,15 @@ INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('d9675bd6-9c70-4693-8d31-8c1
 INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('0e80ae7b-0c8e-4eb5-aac3-a99da9036c63', 'Thermal Propulsion Rocket');
 INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('88ebb5d6-9b40-46aa-9fe6-d21a125ede14', 'Nuclear Pasta');
 
+-- INGOT RECIPES
+
+-- MINERAL RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('52dabbcf-1452-4e97-b514-e75b4580edf9', 'Concrete', 1);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('348a211d-5d96-482a-a3b1-5ae6eae8c454', '52dabbcf-1452-4e97-b514-e75b4580edf9', 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c32600b8-4ec3-43a9-b147-11f460b8b9c1', '52dabbcf-1452-4e97-b514-e75b4580edf9', 'e9978ec3-b882-40cf-8e93-a94936e66029', 15);
+
+
+
 -- RECIPES
 INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('7404c03c-72ba-4be7-8315-0f3265718841', 'Iron Ingot', 1);
 INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8b54a706-78d7-4dfb-8968-c872a29f4f27', '7404c03c-72ba-4be7-8315-0f3265718841', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 30);

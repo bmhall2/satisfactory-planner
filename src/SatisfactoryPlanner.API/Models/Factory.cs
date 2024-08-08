@@ -14,4 +14,8 @@ public class Factory
     public List<Machine> Machines { get; set; } = new List<Machine>();
 
     public List<Miner> Miners { get; set; } = new List<Miner>();
+
+    public List<FactoryConnection> ExportConnections { get; set; } = new List<FactoryConnection>();
+
+    public List<FactoryConnection> ImportConnections { get; set; } = new List<FactoryConnection>();
 }

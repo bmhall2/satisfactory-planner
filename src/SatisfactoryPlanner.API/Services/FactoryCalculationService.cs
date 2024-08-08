@@ -8,6 +8,8 @@ public class FactorySummary
     public Dictionary<ProductionItem, decimal> Balances { get; set; } = new Dictionary<ProductionItem, decimal>();
     public List<MachineOutputSummary> MachineOutputs { get; set; } = new List<MachineOutputSummary>();
     public List<MinerOutputSummary> MinerOutputs { get; set; } = new List<MinerOutputSummary>();
+    public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
+    public List<ExportSummary> Exports { get; set; } = new List<ExportSummary>();
 }
 
 public class MachineOutputSummary
@@ -24,6 +26,20 @@ public class MinerOutputSummary
     public required ProductionItem ProductionItem { get; set; }
 
     public required decimal ProducedPerMinute { get; set; }
+}
+
+public class ImportSummary
+{
+    public required ProductionItem ProductionItem { get; set; }
+
+    public required decimal ImportedPerMinute { get; set; }
+}
+
+public class ExportSummary
+{
+    public required ProductionItem ProductionItem { get; set; }
+
+    public required decimal ExportedPerMinute { get; set; }
 }
 
 public class RecipeOutputSummary
@@ -124,6 +140,36 @@ public class FactoryCalculationService(
             });
         }
 
+        var imports = new List<ImportSummary>();
+        foreach (var import in factory.ImportConnections)
+        {
+            if (!balances.TryAdd(import.ProductionItemId, import.Amount))
+            {
+                balances[import.ProductionItemId] += import.Amount;
+            }
+
+            imports.Add(new ImportSummary()
+            {
+                ProductionItem = import.ProductionItem,
+                ImportedPerMinute = import.Amount
+            });
+        }
+
+        var exports = new List<ExportSummary>();
+        foreach (var export in factory.ExportConnections)
+        {
+            if (!balances.TryAdd(export.ProductionItemId, export.Amount))
+            {
+                balances[export.ProductionItemId] -= export.Amount;
+            }
+
+            exports.Add(new ExportSummary()
+            {
+                ProductionItem = export.ProductionItem,
+                ExportedPerMinute = export.Amount
+            });
+        }
+
         var responseBalances = new Dictionary<ProductionItem, decimal>();
         var nonZeroItemIds = balances.Where(b => b.Value != 0).Select(b => b.Key).ToList();
         var items = _applicationContext
@@ -140,8 +186,9 @@ public class FactoryCalculationService(
         {
             Balances = responseBalances,
             MachineOutputs = machineOutputs,
-            MinerOutputs = minerOutputs
-            
+            MinerOutputs = minerOutputs,
+            Imports = imports,
+            Exports = exports
         };
     }
 }
