@@ -31,13 +31,19 @@
         <div class="machine-section">
             <div class="section-name">Machines</div>
             <div class="factory-list">
-                <div class="factory-object" v-for="machine in factory.machines">
-                    <div>{{ machine.machineType }}</div>
-                    <img class="factory-object-image" :src="`/src/assets/images/machines/${machine.machineType.toLowerCase()}.png`" />
+                <div v-for="machine in factory.machines">
+                    <RouterLink class="factory-object" :to="{ name: 'Machine', params: { id: machine.id } }">
+                        <div>{{ machine.machineType }}</div>
+                        <img class="factory-object-image" :src="`/src/assets/images/machines/${machine.machineType.toLowerCase()}.png`" />
+                        <div class="factory-object-result-list" v-for="result in machine.recipe.results">
+                            <img class="factory-output-image" :src="`/src/assets/images/production-items/${result.productionItem.name.toLowerCase()}.png`" />
+                        </div>
+                    </RouterLink>
                 </div>
-                <div class="factory-object">
+                <RouterLink class="factory-object" :to="{ name: 'NewMachine', params: { factoryId: factory.id } }">
+                    <div>New Machine</div>
                     <img class="factory-object-image" :src="`/src/assets/images/plus.png`" />
-                </div>
+                </RouterLink>
             </div>
         </div>
 
@@ -49,9 +55,14 @@
                     <img class="factory-object-image" :src="`/src/assets/images/extractors/mk${miner.mk.toLowerCase()}.png`" />
                 </div>
                 <div class="factory-object">
+                    <div>New Miner</div>
                     <img class="factory-object-image" :src="`/src/assets/images/plus.png`" />
                 </div>
             </div>
+        </div>
+
+        <div class="summary">
+            <div class="section-name">Summary</div>
         </div>
       </div>
     </div>
@@ -78,6 +89,7 @@
 
     .factory-list {
         display: flex;
+        flex-wrap: wrap;
     }
 
     .factory-object {
@@ -97,6 +109,17 @@
     .factory-object-image {
         max-width: 90%;
         max-height: 80%;
+    }
+
+    .factory-object-result-list {
+        margin-top: -25px;
+        max-height: 30%;
+        align-self: flex-end;
+    }
+
+    .factory-output-image {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .section-name {

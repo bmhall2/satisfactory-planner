@@ -11,7 +11,7 @@ public class RecipeController(
     ApplicationContext _applicationContext) : ControllerBase
 {
     [HttpGet()]
-    public ActionResult<IEnumerable<Recipe>> Search([FromQuery] string? term)
+    public ActionResult<IEnumerable<Recipe>> Search([FromQuery] string? term, [FromQuery] MachineType? machineType)
     {        
         var query = _applicationContext
                         .Recipes
@@ -25,6 +25,11 @@ public class RecipeController(
                 r.Name.ToLower().Contains(term.ToLower()) ||
                 r.Results.Any(result => result.ProductionItem.Name.ToLower().Contains(term.ToLower()))
             );
+        }
+
+        if (machineType.HasValue)
+        {
+            query = query.Where(r => r.MadeIn == machineType.Value);
         }
 
         query = query.OrderBy(r => r.MadeIn).ThenBy(r => r.Name);
