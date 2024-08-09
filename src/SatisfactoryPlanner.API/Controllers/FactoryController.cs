@@ -56,6 +56,8 @@ public class FactoryController(
         if (factory == null)
             return new NotFoundResult();
 
+        factory.Machines = factory.Machines.OrderByDescending(m => m.MachineType).ToList();
+
         return factory;
     }
 

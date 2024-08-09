@@ -22,7 +22,12 @@ public enum MachineType
 {
     Miner,
     Smelter,
+    Foundry,
     Constructor,
     Assembler,
-    Manufacturer
+    Manufacturer,
+    Refinery,
+    Packager,
+    Blender,
+    ParticleAccelerator
 }
