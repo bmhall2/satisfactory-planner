@@ -7,6 +7,10 @@ import MachineView from '@/views/MachineView.vue'
 import NewMachine from '@/views/NewMachine.vue'
 import ExtractorView from '@/views/ExtractorView.vue'
 import NewExtractorView from '@/views/NewExtractorView.vue'
+import NewExport from '@/views/NewExport.vue'
+import ExportView from '@/views/ConnectionView.vue'
+import ConnectionView from '@/views/ConnectionView.vue'
+import NewImport from '@/views/NewImport.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,6 +59,24 @@ const router = createRouter({
       path: '/factory/:factoryId/extractor/new/',
       name: 'NewExtractor',
       component: NewExtractorView,
+      props: true
+    },
+    {
+      path: '/factory/:factoryId/connection/:id',
+      name: 'Connection',
+      component: ConnectionView,
+      props: true
+    },
+    {
+      path: '/factory/:factoryId/export/new/',
+      name: 'NewExport',
+      component: NewExport,
+      props: true
+    },
+    {
+      path: '/factory/:factoryId/import/new/',
+      name: 'NewImport',
+      component: NewImport,
       props: true
     }
   ]
