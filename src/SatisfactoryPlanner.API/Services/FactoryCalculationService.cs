@@ -7,7 +7,7 @@ public class FactorySummary
 {
     public Dictionary<ProductionItem, decimal> Balances { get; set; } = new Dictionary<ProductionItem, decimal>();
     public List<MachineOutputSummary> MachineOutputs { get; set; } = new List<MachineOutputSummary>();
-    public List<MinerOutputSummary> MinerOutputs { get; set; } = new List<MinerOutputSummary>();
+    public List<ExtractorOutputSummary> ExtractorOutputs { get; set; } = new List<ExtractorOutputSummary>();
     public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
     public List<ExportSummary> Exports { get; set; } = new List<ExportSummary>();
 }
@@ -21,7 +21,7 @@ public class MachineOutputSummary
     public required decimal ClockSpeed { get; set; } = 1;
 }
 
-public class MinerOutputSummary
+public class ExtractorOutputSummary
 {
     public required ProductionItem ProductionItem { get; set; }
 
@@ -124,19 +124,19 @@ public class FactoryCalculationService(
             machineOutputs.Add(machineOutput);
         }
 
-        var minerOutputs = new List<MinerOutputSummary>();
-        foreach (var miner in factory.Miners)
+        var extractorOutputs = new List<ExtractorOutputSummary>();
+        foreach (var extractor in factory.Extractors)
         {
-            var clockedProducedPerMinute = (int)miner.NodePurity * (int)miner.Mk * miner.ClockSpeed;
-            if (!balances.TryAdd(miner.ProductionItemId, clockedProducedPerMinute))
+
+            if (!balances.TryAdd(extractor.ProductionItemId, extractor.ClockedAmount()))
             {
-                balances[miner.ProductionItemId] += clockedProducedPerMinute;
+                balances[extractor.ProductionItemId] +=  extractor.ClockedAmount();
             }
 
-            minerOutputs.Add(new MinerOutputSummary()
+            extractorOutputs.Add(new ExtractorOutputSummary()
             {
-                ProductionItem = miner.ProductionItem,
-                ProducedPerMinute = clockedProducedPerMinute
+                ProductionItem = extractor.ProductionItem,
+                ProducedPerMinute =  extractor.ClockedAmount()
             });
         }
 
@@ -158,7 +158,7 @@ public class FactoryCalculationService(
         var exports = new List<ExportSummary>();
         foreach (var export in factory.ExportConnections)
         {
-            if (!balances.TryAdd(export.ProductionItemId, export.Amount))
+            if (!balances.TryAdd(export.ProductionItemId, -export.Amount))
             {
                 balances[export.ProductionItemId] -= export.Amount;
             }
@@ -186,7 +186,7 @@ public class FactoryCalculationService(
         {
             Balances = responseBalances,
             MachineOutputs = machineOutputs,
-            MinerOutputs = minerOutputs,
+            ExtractorOutputs = extractorOutputs,
             Imports = imports,
             Exports = exports
         };

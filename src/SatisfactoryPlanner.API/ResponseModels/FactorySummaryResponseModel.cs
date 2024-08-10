@@ -15,7 +15,7 @@ public class FactorySummaryResponseModel
 
     public List<MachineOutputSummary> MachineOutputs { get; set; } = new List<MachineOutputSummary>();
 
-    public List<MinerOutputSummary> MinerOutputs { get; set; } = new List<MinerOutputSummary>();
+    public List<ExtractorOutputSummary> ExtractorOutputs { get; set; } = new List<ExtractorOutputSummary>();
 
     public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
     

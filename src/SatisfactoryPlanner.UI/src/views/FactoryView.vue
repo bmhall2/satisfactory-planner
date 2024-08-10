@@ -28,15 +28,15 @@
             <div class="name">{{ factory.name }}</div>
         </div>
 
-        <div class="machine-section">
+        <div>
             <div class="section-name">Machines</div>
             <div class="factory-list">
                 <div v-for="machine in factory.machines">
-                    <RouterLink class="factory-object" :to="{ name: 'Machine', params: { id: machine.id } }">
+                    <RouterLink class="factory-object" :to="{ name: 'Machine', params: { factoryId: props.id, id: machine.id } }">
                         <div>{{ machine.machineType }}</div>
-                        <img class="factory-object-image" :src="`/src/assets/images/machines/${machine.machineType.toLowerCase()}.png`" />
+                        <img class="factory-object-image" :src="`/src/assets/images/machines/${machine.machineType}.png`" />
                         <div class="factory-object-result-list" v-for="result in machine.recipe.results">
-                            <img class="factory-output-image" :src="`/src/assets/images/production-items/${result.productionItem.name.toLowerCase()}.png`" />
+                            <img class="factory-output-image" :src="`/src/assets/images/production-items/${result.productionItem.name}.png`" />
                         </div>
                     </RouterLink>
                 </div>
@@ -47,17 +47,22 @@
             </div>
         </div>
 
-        <div class="miners">
-            <div class="section-name">Miners</div>
+        <div>
+            <div class="section-name">Extractors</div>
             <div class="factory-list">
-                <div class="factory-object" v-for="miner in factory.miners">
-                    <div>Miner Mk.{{ miner.mk }}</div>
-                    <img class="factory-object-image" :src="`/src/assets/images/extractors/mk${miner.mk.toLowerCase()}.png`" />
+                <div v-for="extractor in factory.extractors">
+                    <RouterLink class="factory-object" :to="{ name: 'Extractor', params: { factoryId: props.id, id: extractor.id } }">
+                        <div>{{ extractor.extractorType }}</div>
+                        <img class="factory-object-image" :src="`/src/assets/images/extractors/${extractor.extractorType}.png`" />
+                        <div class="factory-object-result-list">
+                            <img class="factory-output-image" :src="`/src/assets/images/production-items/${extractor.productionItem.name.replaceAll('.', '')}.png`" />
+                        </div>
+                    </RouterLink>
                 </div>
-                <div class="factory-object">
-                    <div>New Miner</div>
+                <RouterLink class="factory-object" :to="{ name: 'NewExtractor', params: { factoryId: factory.id } }">
+                    <div>New Extractor</div>
                     <img class="factory-object-image" :src="`/src/assets/images/plus.png`" />
-                </div>
+                </RouterLink>
             </div>
         </div>
 

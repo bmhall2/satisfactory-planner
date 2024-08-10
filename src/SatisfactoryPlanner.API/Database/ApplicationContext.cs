@@ -12,6 +12,8 @@ public class ApplicationContext(DbContextOptions options) : DbContext(options)
     public DbSet<Playthrough> Playthroughs { get; set; }
     public DbSet<Factory> Factories { get; set; }
     public DbSet<Machine> Machines { get; set; }
+    public DbSet<Extractor> Extractors { get; set; }
+    public DbSet<ExtractorProductionItem> ExtractorProductionItems { get; set; }
     public DbSet<FactoryConnection> FactoryConnections { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

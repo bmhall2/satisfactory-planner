@@ -162,7 +162,53 @@ INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('d9675bd6-9c70-4693-8d31-8c1
 INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('0e80ae7b-0c8e-4eb5-aac3-a99da9036c63', 'Thermal Propulsion Rocket');
 INSERT INTO "ProductionItem" ("Id", "Name") VALUES ('88ebb5d6-9b40-46aa-9fe6-d21a125ede14', 'Nuclear Pasta');
 
--- INGOT RECIPES
+-- EXTRACTOR TO PRODUCTION ITEM
+-- MINER MK1
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('7ee315b6-2cfc-42db-8605-763af9114768', 0, 'f964d413-f85b-4f1a-9f5b-68beb5b50f70');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('3480fe86-7b9f-42a0-ac94-e61c769842ed', 0, 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('c2158319-5cd8-4a90-901d-b9d77ab97028', 0, '549e7508-18bd-4dc9-8049-df92c18780ef');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('dabd8b91-0c15-4da9-8cab-5c79643b0903', 0, 'f9403bc2-af3f-4ddf-bd46-89e3f32cc7d3');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('6840759a-ddcb-4646-a6ff-d02b3810c4f4', 0, '38862792-f956-4804-9d7a-46b60fb8d013');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('44811f12-9fbe-4ead-9a9a-c4414c3e969c', 0, 'c0d59595-4b03-40ea-a4b1-df06c5b27d5f');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('f7dca520-b5da-4b6f-97f9-d5da890f2e87', 0, '2ff52414-1041-4d16-b68e-efc253325b9b');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('8274bf0d-468a-48d0-9f3e-7d8b25c75959', 0, '25c668ba-3a12-46ec-9008-1d2a6fdee1a8');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('3c4b7052-3c9c-4780-83e0-d0e798bc9e81', 0, '5510231c-40aa-4541-97f5-d93f9f293c74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('f9e8b828-ce0d-46da-8a92-a98b6ca6697c', 0, '61797338-8b77-4a2f-8c67-bc3899b8a214');
+
+-- MINER MK2
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('b9ac9a30-46d9-4516-a471-7a1bd213d30d', 1, 'f964d413-f85b-4f1a-9f5b-68beb5b50f70');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('3048fb0c-0f75-43a0-94d0-8c5af78926c5', 1, 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('f0fafc8f-b1d6-4df8-9a7e-9889d361b6a7', 1, '549e7508-18bd-4dc9-8049-df92c18780ef');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('9905cdfa-3259-4867-9003-131d18759cd0', 1, 'f9403bc2-af3f-4ddf-bd46-89e3f32cc7d3');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('fce2ed84-d5bc-49ab-9cbe-71057f060b41', 1, '38862792-f956-4804-9d7a-46b60fb8d013');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('1726f057-2d5e-428e-bb38-4a3a6c1fa862', 1, 'c0d59595-4b03-40ea-a4b1-df06c5b27d5f');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('be5bf798-9a2d-41bc-88e6-d57a41a0d7e9', 1, '2ff52414-1041-4d16-b68e-efc253325b9b');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('78e20785-b042-41b0-bf96-c33dfcba2100', 1, '25c668ba-3a12-46ec-9008-1d2a6fdee1a8');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('1cae17e9-2485-4e12-928f-ab1aa58f346d', 1, '5510231c-40aa-4541-97f5-d93f9f293c74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('95c33ad5-20c0-49f5-801e-9abbf590bf4c', 1, '61797338-8b77-4a2f-8c67-bc3899b8a214');
+
+-- MINER MK3
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('df2694a0-c59c-41a3-9806-575720ad8552', 2, 'f964d413-f85b-4f1a-9f5b-68beb5b50f70');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('6e2b9331-4f5e-4571-8b3a-6016f4a6351d', 2, 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('a0e67352-6ec3-45a7-8ae9-d71c16af844c', 2, '549e7508-18bd-4dc9-8049-df92c18780ef');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('b499ea68-1fc1-4d8b-bd31-d8aeb79fc66b', 2, 'f9403bc2-af3f-4ddf-bd46-89e3f32cc7d3');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('bdf83921-8151-4a79-9b09-3000d6fc5701', 2, '38862792-f956-4804-9d7a-46b60fb8d013');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('81738cd1-e75c-4256-b6a2-a9d4d3a984ec', 2, 'c0d59595-4b03-40ea-a4b1-df06c5b27d5f');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('e0532661-5f3a-41bb-af9b-a57318002cbc', 2, '2ff52414-1041-4d16-b68e-efc253325b9b');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('8da4663a-2cc1-478b-b189-752a5439dbad', 2, '25c668ba-3a12-46ec-9008-1d2a6fdee1a8');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('9044ff81-32d9-47a8-a930-031ba8b6a2eb', 2, '5510231c-40aa-4541-97f5-d93f9f293c74');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('fae2133a-6edb-4c7d-9f20-586bf1a1b471', 2, '61797338-8b77-4a2f-8c67-bc3899b8a214');
+
+-- OIL EXTRACTOR
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('6043a8ef-562b-4995-a7f5-6b6bcdde2565', 3, '60cc959c-3782-42ba-ab4b-e3ddaf4da6bd');
+
+-- WATER EXTRACTOR
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('a47c7eb9-cd04-4304-b0c5-4b9ea7226ad9', 4, '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b');
+
+-- RESOURCE WELL EXTRACTOR
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('87545587-5e70-4e6b-b63b-8a6ee33a8ec7', 6, '9eb028d9-3081-443c-a404-a23eab84e655');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('9f525c59-28aa-43c0-9ab2-13cec40f860b', 6, '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b');
+INSERT INTO "ExtractorProductionItem" ("Id", "ExtractorType", "ProductionItemId") VALUES ('b7d3c724-6e1e-43fd-825c-81f0d008f0fd', 6, '60cc959c-3782-42ba-ab4b-e3ddaf4da6bd');
 
 -- MINERAL RECIPES
 INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('52dabbcf-1452-4e97-b514-e75b4580edf9', 'Concrete', 3);

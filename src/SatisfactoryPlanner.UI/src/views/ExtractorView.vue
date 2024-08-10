@@ -1,7 +1,6 @@
 <script setup>
 
-  import { getMachine, updateMachine, deleteMachine } from "../clients/machine"
-  import { searchRecipes } from "../clients/recipe"
+  import { getExtractor, updateExtractor, deleteExtractor } from "../clients/extractor"
   import { ref, watchEffect } from 'vue'
 
   const props = defineProps({
@@ -9,12 +8,10 @@
     id: String
   })
 
-  const machine = ref()
-  const recipes = ref()
-  const isEdit = ref(false)
+  const extractor = ref();
+  const isEdit = ref(false);
   const isDelete = ref(false);
 
-  const editRecipeId = defineModel('editRecipeId');
   const editClockSpeed = defineModel('editClockSpeed');
 
   watchEffect(
@@ -22,20 +19,18 @@
   )
 
   async function fetchData(id) {
-    machine.value = await getMachine(id)
-    recipes.value = await searchRecipes(null, machine.value.machineType)
-    editRecipeId.value = machine.value.recipeId
-    editClockSpeed.value = machine.value.clockSpeed
+    extractor.value = await getExtractor(id);
+    editClockSpeed.value = extractor.value.clockSpeed;
   }
 
   async function edit() {
-    machine.value = await updateMachine(props.id, editRecipeId.value, editClockSpeed.value)
+    extractor.value = await updateExtractor(props.id, editClockSpeed.value);
     isEdit.value = false;
   }
 
   async function remove() {
-    await deleteMachine(props.id);
-    machine.value = null;
+    await deleteExtractor(props.id);
+    extractor.value = null;
     isDelete.value = true;
   }
 
@@ -46,46 +41,30 @@
         <RouterLink class="factory" :to="{ name: 'Factory', params: { id: props.factoryId } }">
             <div>Back to Factory</div>
         </RouterLink>
-
-        <div v-if="machine">
-
+        <div v-if="extractor">
             <div class="info">
-                <div class="name">{{ machine.machineType }}</div>
+                <div class="name">{{ extractor.extractorType }}</div>
                 <button class="action-button" @click="isEdit = !isEdit">Edit</button>
                 <button class="action-button" @click="remove()">Delete</button>
             </div>
 
             <div v-if="!isEdit">
-                <div class="recipe-name"><span>Recipe: </span>{{ machine.recipe.name }}</div>
-                <div class="clock-speed"><span>Clockspeed:</span>{{ machine.clockSpeed }}</div>
+                <div><span>Extracts: </span>{{ extractor.productionItem.name }}</div>
+                <div v-if="extractor.nodePurity"><span>Purity: </span>{{ extractor.nodePurity }}</div>
+                <div><span>ClockSpeed:</span>{{ extractor.clockSpeed }}</div>
             </div>
             
         </div>
-
         <div v-if="isEdit">
-
-            <div class="edit-property">
-                <div>Recipe:</div>
-                <select v-model="editRecipeId">
-                    <option v-for="recipe in recipes" v-bind:value="recipe.id">
-                        {{recipe.name}}
-                    </option>
-                </select>
-            </div>
-
             <div class="edit-property">
                 <div>ClockSpeed:</div>
                 <input type="text" v-model="editClockSpeed">
             </div>
-
             <button @click="edit">Submit</button>
-
         </div>
-
         <div v-if="isDelete">
-            Machine deleted successfully
+            Extractor deleted successfully
         </div>
-
     </div>
 </template>
   
@@ -115,6 +94,5 @@
     .edit-property {
         display: flex;
     }
-    
 </style>
   

@@ -13,7 +13,7 @@
 
   const machineType = defineModel('machineType');
   const recipeId = defineModel('recipeId');
-  const clockSpeed = defineModel('clockSpeed');
+  const clockSpeed = defineModel('clockSpeed', { default: "1"});
 
   const machineTypes = {
     "Smelter" : "Smelter",
@@ -39,9 +39,6 @@
 
   async function create() {
     machine.value = await createMachine(props.factoryId, machineType.value, recipeId.value, clockSpeed.value)
-    if (machine.value) {
-
-    }
   }
 
 </script>

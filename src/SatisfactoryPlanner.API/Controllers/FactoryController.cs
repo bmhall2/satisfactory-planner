@@ -22,7 +22,7 @@ public class FactoryController(
                         .Factories
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
                         .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-                        .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+                        .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
                         .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
                         .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
                         .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
@@ -46,7 +46,7 @@ public class FactoryController(
             .Where(p => p.Id == id)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-            .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
             .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
             .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
             .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
@@ -68,7 +68,7 @@ public class FactoryController(
             .Where(p => p.Id == id)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
             .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-            .Include(f => f.Miners).ThenInclude(m => m.ProductionItem)
+            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
             .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
             .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
             .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
@@ -92,7 +92,7 @@ public class FactoryController(
         var response = _mapper.Map<FactorySummaryResponseModel>(factory);
         response.Balances = responseTotals;
         response.MachineOutputs = summary.MachineOutputs.OrderBy(mo => mo.MachineType).ToList();
-        response.MinerOutputs = summary.MinerOutputs;
+        response.ExtractorOutputs = summary.ExtractorOutputs;
         response.Imports = summary.Imports;
         response.Exports = summary.Exports;
 

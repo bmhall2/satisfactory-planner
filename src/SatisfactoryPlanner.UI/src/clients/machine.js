@@ -27,6 +27,5 @@ export function deleteMachine(id) {
         method: "DELETE"
     };
     
-    return fetch(`http://localhost:5291/api/Machine/${id}`, requestOptions)
-        .then((response) => response.json())
+    return fetch(`http://localhost:5291/api/Machine/${id}`, requestOptions);
 }

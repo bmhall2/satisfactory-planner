@@ -5,6 +5,8 @@ import RecipeView from '@/views/RecipeView.vue'
 import FactoryView from '@/views/FactoryView.vue'
 import MachineView from '@/views/MachineView.vue'
 import NewMachine from '@/views/NewMachine.vue'
+import ExtractorView from '@/views/ExtractorView.vue'
+import NewExtractorView from '@/views/NewExtractorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,15 +34,27 @@ const router = createRouter({
       props: true
     },
     {
-      path: '/machine/:id',
+      path: '/factory/:factoryId/machine/:id',
       name: 'Machine',
       component: MachineView,
       props: true
     },
     {
-      path: '/machine/new/:factoryId',
+      path: '/factory/:factoryId/machine/new/',
       name: 'NewMachine',
       component: NewMachine,
+      props: true
+    },
+    {
+      path: '/factory/:factoryId/extractor/:id',
+      name: 'Extractor',
+      component: ExtractorView,
+      props: true
+    },
+    {
+      path: '/factory/:factoryId/extractor/new/',
+      name: 'NewExtractor',
+      component: NewExtractorView,
       props: true
     }
   ]
