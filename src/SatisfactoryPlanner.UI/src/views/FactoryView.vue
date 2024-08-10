@@ -23,6 +23,9 @@ async function fetchData(id) {
 
 <template>
     <div>
+        <RouterLink :to="{ name: 'planner' }">
+            <div>Back to Factories</div>
+        </RouterLink>
         <div class="factory-section" v-if="factory">
             <div class="info">
                 <div class="header-name">{{ factory.name }}</div>

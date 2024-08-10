@@ -11,6 +11,7 @@ import NewExport from '@/views/NewExport.vue'
 import ExportView from '@/views/ConnectionView.vue'
 import ConnectionView from '@/views/ConnectionView.vue'
 import NewImport from '@/views/NewImport.vue'
+import NewFactory from '@/views/NewFactory.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,11 @@ const router = createRouter({
       name: 'Factory',
       component: FactoryView,
       props: true
+    },
+    {
+      path: '/factory/new/',
+      name: 'NewFactory',
+      component: NewFactory
     },
     {
       path: '/factory/:factoryId/machine/:id',

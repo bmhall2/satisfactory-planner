@@ -26,6 +26,10 @@ async function fetchData() {
             <img class="factory-image" src="@/assets/images/factory.png" />
           </RouterLink>
         </div>
+        <RouterLink class="factory" :to="{ name: 'NewFactory' }">
+            <div>New Factory</div>
+            <img class="factory-image" :src="`/src/assets/images/plus.png`" />
+        </RouterLink>
       </div>
     </div>
   </div>

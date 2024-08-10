@@ -15,3 +15,12 @@ export function getFactoriesByPlaythrough(playthroughId) {
         .then((response) => response.json()
     );
 }
+
+export function createFactory(playthroughId, name) {
+    const requestOptions = {
+        method: "POST"
+    };
+    
+    return fetch(`http://localhost:5291/api/Factory/?playthroughId=${playthroughId}&name=${name}`, requestOptions)
+        .then((response) => response.json())
+}
