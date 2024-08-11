@@ -24,3 +24,11 @@ export function createFactory(playthroughId, name) {
     return fetch(`http://localhost:5291/api/Factory/?playthroughId=${playthroughId}&name=${name}`, requestOptions)
         .then((response) => response.json())
 }
+
+export function deleteFactory(id) {
+    const requestOptions = {
+        method: "DELETE"
+    };
+    
+    return fetch(`http://localhost:5291/api/Factory/${id}`, requestOptions);
+}

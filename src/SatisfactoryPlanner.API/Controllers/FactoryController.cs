@@ -114,4 +114,29 @@ public class FactoryController(
 
         return factory;
     }
+
+    [HttpDelete("{id}")]
+    public ActionResult Delete(Guid id)
+    {
+        var factory = _applicationContext.Factories
+            .Where(p => p.Id == id)
+            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
+            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
+            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
+            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
+            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
+            .SingleOrDefault();
+        
+        if (factory is null)
+        {
+            return new NotFoundResult();
+        }
+
+        _applicationContext.Remove(factory);
+        _applicationContext.SaveChanges();
+
+        return Ok();
+    }
 }

@@ -1,6 +1,6 @@
 <script setup>
 
-import { getFactory, getFactorySummary } from "../clients/factory"
+import { getFactory, getFactorySummary, deleteFactory } from "../clients/factory"
 import { ref, watchEffect } from 'vue'
 
 const props = defineProps({
@@ -9,6 +9,7 @@ const props = defineProps({
 
 const factory = ref()
 const summary = ref()
+const isDelete = ref(false);
 
 watchEffect(
     () => fetchData(props.id)
@@ -18,6 +19,13 @@ async function fetchData(id) {
     factory.value = await getFactory(id)
     summary.value = await getFactorySummary(id)
 }
+
+async function remove() {
+    await deleteFactory(props.id);
+    factory.value = null;
+    summary.value = null;
+    isDelete.value = true;
+  }
 
 </script>
 
@@ -29,6 +37,7 @@ async function fetchData(id) {
         <div class="factory-section" v-if="factory">
             <div class="info">
                 <div class="header-name">{{ factory.name }}</div>
+                <button class="action-button" @click="remove()">Delete</button>
             </div>
 
             <div>
@@ -144,6 +153,10 @@ async function fetchData(id) {
                     </RouterLink>
                 </div>
             </div>
+        </div>
+
+        <div v-if="isDelete">
+            Machine deleted successfully
         </div>
 
     </div>

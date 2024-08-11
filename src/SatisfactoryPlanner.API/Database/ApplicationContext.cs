@@ -18,16 +18,16 @@ public class ApplicationContext(DbContextOptions options) : DbContext(options)
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<FactoryConnection>()
-            .HasOne(fc => fc.ExportingFactory)
-            .WithMany(f => f.ExportConnections)
-            .HasForeignKey(fc => fc.ExportingFactoryId)
-            .IsRequired();
+        modelBuilder.Entity<Factory>()
+            .HasMany(fc => fc.ExportConnections)
+            .WithOne(ec => ec.ExportingFactory)
+            .HasForeignKey(f => f.ExportingFactoryId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        modelBuilder.Entity<FactoryConnection>()
-            .HasOne(fc => fc.ImportingFactory)
-            .WithMany(f => f.ImportConnections)
-            .HasForeignKey(fc => fc.ImportingFactoryId)
-            .IsRequired();
+        modelBuilder.Entity<Factory>()
+            .HasMany(fc => fc.ImportConnections)
+            .WithOne(ic => ic.ImportingFactory)
+            .HasForeignKey(ic => ic.ImportingFactoryId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
