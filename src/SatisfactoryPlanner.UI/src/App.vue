@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Planner</RouterLink>
         <RouterLink to="/recipes">Recipes</RouterLink>
+        <RouterLink to="/recipe-seeder">Recipe Seeder</RouterLink>
       </nav>
     </div>
   </header>

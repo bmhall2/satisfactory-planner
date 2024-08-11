@@ -54,4 +54,10 @@ public class RecipeController(
 
         return result;
     }
+
+    [HttpGet("GUID")]
+    public ActionResult<string> GetGuid()
+    {        
+        return Guid.NewGuid().ToString();
+    }
 }

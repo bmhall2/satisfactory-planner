@@ -8,10 +8,10 @@ import NewMachine from '@/views/NewMachine.vue'
 import ExtractorView from '@/views/ExtractorView.vue'
 import NewExtractorView from '@/views/NewExtractorView.vue'
 import NewExport from '@/views/NewExport.vue'
-import ExportView from '@/views/ConnectionView.vue'
 import ConnectionView from '@/views/ConnectionView.vue'
 import NewImport from '@/views/NewImport.vue'
 import NewFactory from '@/views/NewFactory.vue'
+import RecipeSeederView from '@/views/RecipeSeederView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +31,11 @@ const router = createRouter({
       name: 'Recipe',
       component: RecipeView,
       props: true
+    },
+    {
+      path: '/recipe-seeder',
+      name: 'RecipeSeeder',
+      component: RecipeSeederView
     },
     {
       path: '/factory/:id',

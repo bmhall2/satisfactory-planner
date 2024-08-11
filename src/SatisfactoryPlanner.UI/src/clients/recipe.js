@@ -20,3 +20,8 @@ export function searchRecipes(term, machineType) {
         .then((response) => response.json()
     );
 }
+
+export function getGuid() {
+    return fetch(`http://localhost:5291/api/Recipe/GUID`)
+        .then((response) => response.text());
+}
