@@ -56,7 +56,11 @@ public class FactoryController(
         if (factory == null)
             return new NotFoundResult();
 
-        factory.Machines = factory.Machines.OrderByDescending(m => m.MachineType).ToList();
+        factory.Machines = factory.Machines
+                            .OrderByDescending(m => m.MachineType)
+                            .ThenBy(m => m.Recipe.Name)
+                            .ThenByDescending(m => m.ClockSpeed)
+                            .ToList();
 
         return factory;
     }

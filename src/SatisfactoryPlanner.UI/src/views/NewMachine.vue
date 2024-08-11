@@ -14,6 +14,7 @@
   const machineType = defineModel('machineType');
   const recipeId = defineModel('recipeId');
   const clockSpeed = defineModel('clockSpeed', { default: "1"});
+  const number = defineModel('number', { default: 1 });
 
   const machineTypes = {
     "Smelter" : "Smelter",
@@ -38,7 +39,9 @@
   }
 
   async function create() {
-    machine.value = await createMachine(props.factoryId, machineType.value, recipeId.value, clockSpeed.value)
+    for (let i = 0; i < number.value; i++) {
+        machine.value = await createMachine(props.factoryId, machineType.value, recipeId.value, clockSpeed.value)
+    }
   }
 
 </script>
@@ -75,7 +78,12 @@
                         <input type="text" v-model="clockSpeed">
                     </div>
 
-                    <button v-if="recipeId && clockSpeed" @click="create">Submit</button>
+                    <div class="machine-property">
+                        <div>Number:</div>
+                        <input type="number" v-model="number">
+                    </div>
+
+                    <button v-if="recipeId && clockSpeed && number" @click="create">Submit</button>
                 </div>
             </div>
         </div>

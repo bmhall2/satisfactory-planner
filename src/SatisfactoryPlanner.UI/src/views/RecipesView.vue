@@ -23,7 +23,7 @@ async function fetchData() {
         <div v-for="recipe in recipes">
           <RouterLink class="recipe" :to="{ name: 'Recipe', params: { id: recipe.id } }">
             <div>{{ recipe.name }}</div>
-            <img class="recipe-image" src="@/assets/images/production-items/Iron Ore.png" />
+            <img class="recipe-image" :src="`/src/assets/images/production-items/${recipe.results[0].productionItem.name}.png`" />
           </RouterLink>
         </div>
       </div>

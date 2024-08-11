@@ -56,6 +56,13 @@
             </div>
 
             <div v-if="!isEdit">
+
+                <div class="produced-list">
+                    <div v-for="result in machine.recipe.results">
+                        <div class="result">{{ result.productionItem.name }} x {{ result.producedPerMinute * machine.clockSpeed }}</div>
+                    </div>
+                </div>
+
                 <div class="recipe-name"><span>Recipe: </span>{{ machine.recipe.name }}</div>
                 <div class="clock-speed"><span>Clockspeed:</span>{{ machine.clockSpeed }}</div>
             </div>
@@ -114,6 +121,12 @@
 
     .edit-property {
         display: flex;
+    }
+
+    .result {
+        color: var(--color-heading);
+        font-size: 20px;
+        font-weight: bold;
     }
     
 </style>

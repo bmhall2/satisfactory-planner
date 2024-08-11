@@ -88,10 +88,10 @@ async function remove() {
         </div>
 
         <div v-if="summary" class="factory-section">
-            
+
             <div class="header-name">Summary</div>
 
-            <div v-if="summary.balances">
+            <div v-if="summary.balances.length > 0">
                 <div class="section-name">Balances</div>
 
                 <div class="factory-list">
@@ -99,18 +99,21 @@ async function remove() {
                         <div class="surplus" v-if="balance.amount > 0">{{ balance.amount }}</div>
                         <div class="deficit" v-if="balance.amount < 0">{{ -balance.amount }}</div>
                         <img class="factory-object-image"
-                                :src="`/src/assets/images/production-items/${balance.productionItem.name.replaceAll('.', '')}.png`" />
+                            :src="`/src/assets/images/production-items/${balance.productionItem.name.replaceAll('.', '')}.png`" />
                     </div>
                 </div>
             </div>
 
+            <div v-if="(!summary.balances || summary.balances.length == 0)">No Balances</div>
+
             <div>
                 <div class="section-name">Imports</div>
-                
+
                 <div class="factory-list">
                     <div v-for="factoryImport in factory.importConnections">
 
-                        <RouterLink class="factory-object" :to="{ name: 'Connection', params: { factoryId: props.id, id: factoryImport.id } }">
+                        <RouterLink class="factory-object"
+                            :to="{ name: 'Connection', params: { factoryId: props.id, id: factoryImport.id } }">
 
                             <div>{{ factoryImport.amount }}</div>
 
@@ -132,10 +135,11 @@ async function remove() {
                 <div class="section-name">Exports</div>
 
                 <div class="factory-list">
-                    
+
                     <div v-for="factoryExport in factory.exportConnections">
 
-                        <RouterLink class="factory-object" :to="{ name: 'Connection', params: { factoryId: props.id, id: factoryExport.id } }">
+                        <RouterLink class="factory-object"
+                            :to="{ name: 'Connection', params: { factoryId: props.id, id: factoryExport.id } }">
 
                             <div>{{ factoryExport.amount }}</div>
 
@@ -146,8 +150,7 @@ async function remove() {
 
                     </div>
 
-                    <RouterLink class="factory-object"
-                        :to="{ name: 'NewExport', params: { factoryId: factory.id } }">
+                    <RouterLink class="factory-object" :to="{ name: 'NewExport', params: { factoryId: factory.id } }">
                         <div>New Export</div>
                         <img class="factory-object-image" :src="`/src/assets/images/plus.png`" />
                     </RouterLink>
@@ -163,7 +166,6 @@ async function remove() {
 </template>
 
 <style scoped>
-
 .factory-section {
     display: flex;
     flex-direction: column;
@@ -245,8 +247,7 @@ async function remove() {
     color: chartreuse
 }
 
-.deficit {
-    font-weight: bold;
+.deficit { font-weight: bold;
     color: red
 }
 

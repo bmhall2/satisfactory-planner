@@ -60,7 +60,11 @@ public class MachineController(
         [FromQuery] Guid recipeId,
         [FromQuery] decimal clockSpeed)
     {
-        var machine = _applicationContext.Machines.Where(m => m.Id == id).SingleOrDefault();
+        var machine = _applicationContext.Machines
+                        .Where(m => m.Id == id)
+                        .Include(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
+                        .Include(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem).SingleOrDefault();
+        
         if (machine is null)
         {
             return new NotFoundResult();
