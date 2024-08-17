@@ -29,5 +29,6 @@ public enum MachineType
     Refinery,
     Packager,
     Blender,
-    ParticleAccelerator
+    ParticleAccelerator,
+    NuclearPowerPlant
 }

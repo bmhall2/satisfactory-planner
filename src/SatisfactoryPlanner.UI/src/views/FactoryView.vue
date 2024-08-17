@@ -46,13 +46,21 @@ async function remove() {
                     <div v-for="machine in factory.machines">
                         <RouterLink class="factory-object"
                             :to="{ name: 'Machine', params: { factoryId: props.id, id: machine.id } }">
+
                             <div>{{ machine.machineType }}</div>
+
                             <img class="factory-object-image"
                                 :src="`/src/assets/images/machines/${machine.machineType}.png`" />
-                            <div class="factory-object-result-list" v-for="result in machine.recipe.results">
-                                <img class="factory-output-image"
-                                    :src="`/src/assets/images/production-items/${result.productionItem.name}.png`" />
+
+                            <div class="factory-object-result-list">
+
+                                <div v-for="result in machine.recipe.results">
+                                    <img class="factory-output-image"
+                                        :src="`/src/assets/images/production-items/${result.productionItem.name}.png`" />
+                                </div>
+
                             </div>
+
                         </RouterLink>
                     </div>
                     <RouterLink class="factory-object" :to="{ name: 'NewMachine', params: { factoryId: factory.id } }">
@@ -223,13 +231,16 @@ async function remove() {
 
 .factory-object-result-list {
     margin-top: -25px;
-    max-height: 30%;
-    align-self: flex-end;
+    height: 30px;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row-reverse;
 }
 
 .factory-output-image {
-    max-width: 100%;
-    max-height: 100%;
+    width: 30px;
+    height: 30px;
 }
 
 .section-name {

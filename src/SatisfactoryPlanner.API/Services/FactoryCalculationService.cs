@@ -171,7 +171,7 @@ public class FactoryCalculationService(
         }
 
         var responseBalances = new Dictionary<ProductionItem, decimal>();
-        var nonZeroItemIds = balances.Where(b => b.Value != 0).Select(b => b.Key).ToList();
+        var nonZeroItemIds = balances.Where(b => Math.Round(b.Value, 3) != 0).Select(b => b.Key).ToList();
         var items = _applicationContext
                         .ProductionItems
                         .Where(pi => nonZeroItemIds.Contains(pi.Id))
@@ -179,7 +179,7 @@ public class FactoryCalculationService(
         
         foreach (var item in items)
         {
-            responseBalances.Add(item, balances[item.Id]);
+            responseBalances.Add(item, Math.Round(balances[item.Id], 3));
         }
 
         return new FactorySummary()

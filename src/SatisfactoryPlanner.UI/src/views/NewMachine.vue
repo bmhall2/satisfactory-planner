@@ -25,7 +25,8 @@
     "Refinery" : "Refinery",
     "Packager" : "Packager",
     "Blender" : "Blender",
-    "ParticleAccelerator" : "Particle Accelerator"
+    "ParticleAccelerator" : "Particle Accelerator",
+    "NuclearPowerPlant" : "Nuclear Power Plant"
   }
 
   watchEffect(

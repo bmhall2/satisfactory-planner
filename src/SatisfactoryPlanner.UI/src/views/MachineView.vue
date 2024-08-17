@@ -59,7 +59,7 @@
 
                 <div class="produced-list">
                     <div v-for="result in machine.recipe.results">
-                        <div class="result">{{ result.productionItem.name }} x {{ result.producedPerMinute * machine.clockSpeed }}</div>
+                        <div class="result">{{ result.productionItem.name }} x {{ Math.round(result.producedPerMinute * machine.clockSpeed * 1000) / 1000 }}</div>
                     </div>
                 </div>
 
