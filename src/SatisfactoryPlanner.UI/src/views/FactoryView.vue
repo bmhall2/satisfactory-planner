@@ -197,8 +197,8 @@ async function remove() {
 }
 
 .factory-object {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     margin: 5px 5px;
 
     display: flex;
@@ -211,8 +211,8 @@ async function remove() {
 }
 
 .balance {
-    height: 108px;
-    width: 108px;
+    height: 158px;
+    width: 158px;
     margin: 5px 5px;
 
     display: flex;

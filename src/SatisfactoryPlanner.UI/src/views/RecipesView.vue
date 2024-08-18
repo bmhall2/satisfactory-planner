@@ -5,6 +5,8 @@ import { ref, watchEffect } from 'vue'
 
 const recipes = ref()
 
+const recipeSearchTerm = defineModel('recipeSearchTerm', { default: ""});
+
 watchEffect(
   () => fetchData()
 )
@@ -19,11 +21,16 @@ async function fetchData() {
   <div>
     <div v-if="recipes">
       <h1>Recipes</h1>
+      <div class="machine-property">
+        <div>Search:</div>
+        <input type="text" v-model="recipeSearchTerm">
+      </div>
       <div class="recipes">
-        <div v-for="recipe in recipes">
+        <div v-for="recipe in recipes.filter((r) => r.name.toLowerCase().includes(recipeSearchTerm.toLowerCase()))">
           <RouterLink class="recipe" :to="{ name: 'Recipe', params: { id: recipe.id } }">
             <div>{{ recipe.name }}</div>
-            <img class="recipe-image" :src="`/src/assets/images/production-items/${recipe.results[0].productionItem.name}.png`" />
+            <img class="recipe-image"
+              :src="`/src/assets/images/production-items/${recipe.results[0].productionItem.name}.png`" />
           </RouterLink>
         </div>
       </div>

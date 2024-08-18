@@ -796,3 +796,466 @@ INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredP
 INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('bb81d57b-843a-47b1-a64c-39be71d3381a', '9f1fbca6-e70d-46e1-93b7-433053342e0d', 'caa19392-f375-4cb2-86cf-d74484cd62e4', 0.5);
 INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('93ed2413-fada-47b0-9cc2-f41671fc8527', '9f1fbca6-e70d-46e1-93b7-433053342e0d', '88ebb5d6-9b40-46aa-9fe6-d21a125ede14', 0.5);
 
+-- ALTERNATE INGOT RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('64d7379d-44a9-4ce2-9240-b215e7712a91', 'Iron Alloy Ingot', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('23665fe1-c6e4-4640-9f31-39d95c3044c5', '64d7379d-44a9-4ce2-9240-b215e7712a91', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 20);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('25883d8e-8143-4c24-8f6f-b5cbc561c9d2', '64d7379d-44a9-4ce2-9240-b215e7712a91', '549e7508-18bd-4dc9-8049-df92c18780ef', 20);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('be99524a-aa0c-4ea4-a7f3-bcc87383fef7', '64d7379d-44a9-4ce2-9240-b215e7712a91', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 50);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d94eca60-dc36-49fa-b8ac-a75838c94431', 'Pure Iron Ingot', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('da0a01be-c9c3-45cb-b354-9d27e09f9f50', 'd94eca60-dc36-49fa-b8ac-a75838c94431', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 35);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b99145e3-480e-4d3d-ad9f-c8ee74e322b2', 'd94eca60-dc36-49fa-b8ac-a75838c94431', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 20);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('38e9feac-9d47-4ac2-a628-c0e31fad167a', 'd94eca60-dc36-49fa-b8ac-a75838c94431', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 65);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('1bffc991-cc65-488d-b3e8-734d2d0222df', 'Copper Alloy Ingot', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('90a1ecf6-0fb5-49d6-bb30-3a7723c2d4f2', '1bffc991-cc65-488d-b3e8-734d2d0222df', '549e7508-18bd-4dc9-8049-df92c18780ef', 50);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('6269eed4-4477-4ab0-9610-aab2632c696f', '1bffc991-cc65-488d-b3e8-734d2d0222df', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 25);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('21508e94-2f67-449f-b48b-64e79f70443d', '1bffc991-cc65-488d-b3e8-734d2d0222df', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 100);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('aff835ad-45ba-45dd-962b-43d95b7c716b', 'Pure Copper Ingot', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f2574193-7319-4e69-941b-2d0a73fa27b0', 'aff835ad-45ba-45dd-962b-43d95b7c716b', '549e7508-18bd-4dc9-8049-df92c18780ef', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4cdcf90b-d0fd-44d6-8cab-6f42e4b64568', 'aff835ad-45ba-45dd-962b-43d95b7c716b', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 10);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('57ebd0ac-1b3c-4488-afbb-c8c34cbc3942', 'aff835ad-45ba-45dd-962b-43d95b7c716b', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 37.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('f39f09a0-9a86-4718-ac14-1ee8e400e32c', 'Pure Caterium Ingot', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4fdb29e6-2224-4641-9c24-8663e63e7a3c', 'f39f09a0-9a86-4718-ac14-1ee8e400e32c', 'f9403bc2-af3f-4ddf-bd46-89e3f32cc7d3', 24);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('585cec40-a398-41b4-9a50-cad02a246354', 'f39f09a0-9a86-4718-ac14-1ee8e400e32c', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 24);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('95eca5bd-f049-4ee0-9deb-f5e46b91ba12', 'f39f09a0-9a86-4718-ac14-1ee8e400e32c', '067b5427-8cf8-4b09-aadf-b3ecaf1aa333', 12);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('cef1c625-b53b-4c7e-8ef2-083633f0b32e', 'Coke Steel Ingot', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a29b7413-44a1-417d-a18d-989856cf302a', 'cef1c625-b53b-4c7e-8ef2-083633f0b32e', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('60a727ae-d5ce-4d3e-896a-ae8dae351ecc', 'cef1c625-b53b-4c7e-8ef2-083633f0b32e', '1ee1a2bb-3539-4075-95ba-9543f879e3c1', 75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('a531c029-d4af-49d4-84e0-5c437896d467', 'cef1c625-b53b-4c7e-8ef2-083633f0b32e', 'c1bc6f2a-5143-4fa9-a0c6-c9905afa98c0', 100);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('dd8ea73c-edd5-4235-b4e0-cda439443e56', 'Compacted Steel Ingot', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('09bdaae8-af66-41bf-b40b-bac8d8ac314c', 'dd8ea73c-edd5-4235-b4e0-cda439443e56', 'f964d413-f85b-4f1a-9f5b-68beb5b50f70', 22.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('eda1a701-94cd-41e4-901d-c739b04ad158', 'dd8ea73c-edd5-4235-b4e0-cda439443e56', '2af25498-23e7-44ac-a559-76963785c211', 11.25);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('0b9cbb04-4b44-4cb8-bc4d-aef1017c3c90', 'dd8ea73c-edd5-4235-b4e0-cda439443e56', 'c1bc6f2a-5143-4fa9-a0c6-c9905afa98c0', 37.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d736b0f4-8e65-443c-b276-8b546756dbaa', 'Solid Steel Ingot', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ea11fd63-b1eb-48f5-ba2e-ba5a0cd60547', 'd736b0f4-8e65-443c-b276-8b546756dbaa', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 40);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('29efe221-0d2b-48e1-9334-2c82e4c0b82b', 'd736b0f4-8e65-443c-b276-8b546756dbaa', '38862792-f956-4804-9d7a-46b60fb8d013', 40);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('687daff1-e690-4e4f-ab53-9b86ad8801c5', 'd736b0f4-8e65-443c-b276-8b546756dbaa', 'c1bc6f2a-5143-4fa9-a0c6-c9905afa98c0', 60);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('720e7118-ce72-4125-aeb0-3603ccb73570', 'Pure Aluminum Ingot', 1);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('0f4ff18d-3ac7-4a28-b758-fe84ec576ade', '720e7118-ce72-4125-aeb0-3603ccb73570', '70109a5e-14a6-4ce2-8baf-8f3c2e200625', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('39f35267-91fc-4d4a-abef-b7686013753c', '720e7118-ce72-4125-aeb0-3603ccb73570', '5b2ba98e-bfa1-43ea-a211-42fe9977fbe4', 30);
+
+-- ALTERNATE MINERAL RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('22185946-af9f-4a26-aec0-33770342622d', 'Fine Concrete', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8bf8ec26-e074-4513-b978-d0a553b70681', '22185946-af9f-4a26-aec0-33770342622d', 'cd229d3e-85da-4a02-b598-08dc76028222', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1c5fc9cc-1126-4578-b1ab-54a24b8d1fb7', '22185946-af9f-4a26-aec0-33770342622d', 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('6e6644ed-35d5-43fe-a6e6-6d621dcb5e9c', '22185946-af9f-4a26-aec0-33770342622d', 'e9978ec3-b882-40cf-8e93-a94936e66029', 25);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('12441921-db67-4164-a919-e31be821230a', 'Rubber Concrete', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f4d8a882-5234-49dc-ada6-862f0fa3b270', '12441921-db67-4164-a919-e31be821230a', 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74', 50);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d3253d95-2db8-4dac-8c34-762c2d3ea80c', '12441921-db67-4164-a919-e31be821230a', 'd84628e4-c85e-4c84-a136-32441a40a89e', 10);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d5036965-3228-4ade-8af6-0176081d7b18', '12441921-db67-4164-a919-e31be821230a', 'e9978ec3-b882-40cf-8e93-a94936e66029', 45);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('0988bb08-146a-4d40-8218-3babf647922b', 'Wet Concrete', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('e0abb80a-b748-46d0-ac19-b364538bc6a0', '0988bb08-146a-4d40-8218-3babf647922b', 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74', 120);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('33243f27-5f8a-4f31-b5df-1002c0c6d14e', '0988bb08-146a-4d40-8218-3babf647922b', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 100);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('5aa4c953-adc4-40cb-868f-00fd23990450', '0988bb08-146a-4d40-8218-3babf647922b', 'e9978ec3-b882-40cf-8e93-a94936e66029', 80);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6afb5643-9892-4167-9be7-efd097f304b7', 'Pure Quartz Crystal', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2931e916-2d33-4f80-9504-574b9077c89d', '6afb5643-9892-4167-9be7-efd097f304b7', 'c0d59595-4b03-40ea-a4b1-df06c5b27d5f', 67.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('28db4d85-d07a-4fe2-b858-c36fc033c3bc', '6afb5643-9892-4167-9be7-efd097f304b7', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 37.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('decee6ad-d5a5-48e1-89ed-e663ead710a1', '6afb5643-9892-4167-9be7-efd097f304b7', '7d8858d3-3c54-4e99-9ec7-88961a8f883f', 52.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('5a41661a-44c4-42c0-b39f-c3aaa6758979', 'Cheap Silica', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7dc043db-8181-4fd8-87e8-9cdac455a523', '5a41661a-44c4-42c0-b39f-c3aaa6758979', 'c0d59595-4b03-40ea-a4b1-df06c5b27d5f', 11.25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('6413c4b4-dc33-4740-a36e-212b38b66227', '5a41661a-44c4-42c0-b39f-c3aaa6758979', 'd0ae0c70-f8e1-4d90-b961-cb934f9ccb74', 18.75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('60599406-5372-4b44-8fda-1fd918055c8e', '5a41661a-44c4-42c0-b39f-c3aaa6758979', 'cd229d3e-85da-4a02-b598-08dc76028222', 26.25);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('fca05d93-1982-44c8-b4da-0c7f2b3a5cf3', 'Heavy Oil Residue', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ae9cfd01-1057-48bc-8f14-7933f8354264', 'fca05d93-1982-44c8-b4da-0c7f2b3a5cf3', '60cc959c-3782-42ba-ab4b-e3ddaf4da6bd', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('25097920-cc6b-4ac4-8dcc-731745ebdb1e', 'fca05d93-1982-44c8-b4da-0c7f2b3a5cf3', '03ab8a1b-6e94-406b-b362-31938e984e2d', 40);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('69fc0b71-a773-4023-8c8e-c87188b3b8fe', 'fca05d93-1982-44c8-b4da-0c7f2b3a5cf3', '11ecce3d-8787-41dc-91ee-f9fb40aca645', 20);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('f54d66b6-2213-461b-b48b-fbeb51330e53', 'Polymer Resin', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('fc1b5337-40d6-4cf6-80af-f3f732911a71', 'f54d66b6-2213-461b-b48b-fbeb51330e53', '60cc959c-3782-42ba-ab4b-e3ddaf4da6bd', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('27533bf0-ed9b-420e-8518-e412e798358f', 'f54d66b6-2213-461b-b48b-fbeb51330e53', '11ecce3d-8787-41dc-91ee-f9fb40aca645', 130);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c43d0a26-e0a9-4425-8cd3-572e6ed6b796', 'f54d66b6-2213-461b-b48b-fbeb51330e53', '03ab8a1b-6e94-406b-b362-31938e984e2d', 20);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('b029a6f0-7071-4540-84aa-5257a08fa50b', 'Electrode Aluminum Scrap', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3ca904d8-f289-4531-b7f5-c883414a83c6', 'b029a6f0-7071-4540-84aa-5257a08fa50b', '48bf8676-96cb-40e1-a367-ee6a4d50603f', 180);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3b1ee86a-d969-45e5-bbfa-a159d1a03edf', 'b029a6f0-7071-4540-84aa-5257a08fa50b', '1ee1a2bb-3539-4075-95ba-9543f879e3c1', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('0ac68d7c-6d3d-4af2-82fc-8d212f08f6df', 'b029a6f0-7071-4540-84aa-5257a08fa50b', '70109a5e-14a6-4ce2-8baf-8f3c2e200625', 300);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('bc99b43b-8eaa-434e-b8f8-aa0efa31e73d', 'b029a6f0-7071-4540-84aa-5257a08fa50b', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 105);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d73d80ae-16eb-4295-9514-0a6d1de09fa4', 'Instant Scrap', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('9b3ddcd0-3162-41c5-8a12-af687a210b76', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', '25c668ba-3a12-46ec-9008-1d2a6fdee1a8', 150);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('6881c52e-034d-416e-a30d-1ea99209f024', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', '38862792-f956-4804-9d7a-46b60fb8d013', 100);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2c5c93fb-2fa8-4a3a-81c4-f241beaf7cb9', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', 'ee513342-5416-42a3-9866-11f2cedf482d', 50);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ce834cb6-5846-4013-bbeb-4457ff4104e2', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b9c88f4f-3d4c-4dba-90b7-8f7105ceea34', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', '70109a5e-14a6-4ce2-8baf-8f3c2e200625', 300);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b629d851-2209-4944-9871-c7fa07339b6d', 'd73d80ae-16eb-4295-9514-0a6d1de09fa4', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 50);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6a048943-845a-4579-86b9-ddc077aa0a5b', 'Diluted Fuel', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('55f63037-c291-4173-84d4-54690718f298', '6a048943-845a-4579-86b9-ddc077aa0a5b', '03ab8a1b-6e94-406b-b362-31938e984e2d', 50);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b2b28b99-0175-46c7-9691-a179a283b6c1', '6a048943-845a-4579-86b9-ddc077aa0a5b', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 100);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('0aafa1d5-d2ac-4be0-bd95-448bdc44cd84', '6a048943-845a-4579-86b9-ddc077aa0a5b', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 100);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c1cc085d-e185-4f44-854b-5b4df4e119af', 'Residual Fuel', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('6a6687a5-ea39-4d5c-8ad5-f656fb3b4835', 'c1cc085d-e185-4f44-854b-5b4df4e119af', '03ab8a1b-6e94-406b-b362-31938e984e2d', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('ea06f768-6db0-4643-aa46-bea6fcc566c4', 'c1cc085d-e185-4f44-854b-5b4df4e119af', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 40);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('7de8b9f2-193c-408a-b9c3-7eb120a21652', 'Turbo Blend Fuel', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d5e05bb7-e863-4ad9-b91d-5eaa323b81bf', '7de8b9f2-193c-408a-b9c3-7eb120a21652', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7dc7b723-a6d9-48ec-8787-5d43707e974d', '7de8b9f2-193c-408a-b9c3-7eb120a21652', '03ab8a1b-6e94-406b-b362-31938e984e2d', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('c760397d-e3a6-4bf7-b03e-a5a2ca6ac4a9', '7de8b9f2-193c-408a-b9c3-7eb120a21652', '2ff52414-1041-4d16-b68e-efc253325b9b', 22.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7dee0df7-45b1-4565-9ad1-f1befd32a99f', '7de8b9f2-193c-408a-b9c3-7eb120a21652', '1ee1a2bb-3539-4075-95ba-9543f879e3c1', 22.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('063b32df-758d-4e0d-b52a-90292ff95c4f', '7de8b9f2-193c-408a-b9c3-7eb120a21652', 'dbd362ec-7ba8-49e8-84e9-bf83b871853a', 45);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('709e2b48-11d5-4b81-9331-758edc6fd66c', 'Turbo Heavy Fuel', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d3c6866b-593c-4434-b3ae-672d41febc44', '709e2b48-11d5-4b81-9331-758edc6fd66c', '03ab8a1b-6e94-406b-b362-31938e984e2d', 37.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5c200220-0533-4abd-8d1b-b156b6b01236', '709e2b48-11d5-4b81-9331-758edc6fd66c', '2af25498-23e7-44ac-a559-76963785c211', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c473b6ab-14aa-4f31-8631-ad1d68b07590', '709e2b48-11d5-4b81-9331-758edc6fd66c', 'dbd362ec-7ba8-49e8-84e9-bf83b871853a', 30);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('97c64938-6376-4d83-badb-da649a5d123f', 'Sloppy Alumina', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('c4aad458-7dd3-4939-832d-f961e7dbf1ee', '97c64938-6376-4d83-badb-da649a5d123f', '25c668ba-3a12-46ec-9008-1d2a6fdee1a8', 200);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('958a6cfc-f8a4-4988-80a0-ae8c3fb0f6e2', '97c64938-6376-4d83-badb-da649a5d123f', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 200);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('adebc2a8-83a4-49f1-8bb7-95e52b5edf13', '97c64938-6376-4d83-badb-da649a5d123f', '48bf8676-96cb-40e1-a367-ee6a4d50603f', 240);
+
+-- ALTERNATE STANDARD PART RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c91aaa1c-2f6d-42e0-97b2-22de76416601', 'Steel Rod', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('dd545a4b-d659-4c1f-9a0a-fa447fca3beb', 'c91aaa1c-2f6d-42e0-97b2-22de76416601', 'c1bc6f2a-5143-4fa9-a0c6-c9905afa98c0', 12);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('4625c4c6-c8f4-4e18-bd3e-230c08aa3fdb', 'c91aaa1c-2f6d-42e0-97b2-22de76416601', 'fa109bdd-840f-49d5-b12b-b2b8ac1b8834', 48);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('9cffb5d5-e5e0-4a59-ab13-db7b9ef86cb9', 'Cast Screw', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('30f53a7b-9af8-4129-8744-517c62ef9f76', '9cffb5d5-e5e0-4a59-ab13-db7b9ef86cb9', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 12.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('1e0085c2-eb7f-4a9a-acfa-fd873283a85d', '9cffb5d5-e5e0-4a59-ab13-db7b9ef86cb9', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 50);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d5c579f2-fcf4-454d-a1ec-807b9d071d1e', 'Steel Screw', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1149c14c-1e66-44df-8590-9b47bc7404ca', 'd5c579f2-fcf4-454d-a1ec-807b9d071d1e', 'ae0a493b-e348-48ee-858f-52fde2dad5a7', 5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b7519bba-d970-4c9e-a7f8-70de1478a623', 'd5c579f2-fcf4-454d-a1ec-807b9d071d1e', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 260);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('00f59012-ff85-44f8-9e31-a438d5928387', 'Coated Iron Plate', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d861edeb-b63f-4adb-810d-b941dfaeab84', '00f59012-ff85-44f8-9e31-a438d5928387', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 50);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a8662ff8-a81c-4656-8dc5-06fbc9a41f60', '00f59012-ff85-44f8-9e31-a438d5928387', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 10);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('60eb13c2-68c3-4613-a0c4-a122444d635d', '00f59012-ff85-44f8-9e31-a438d5928387', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d7bcc46d-ede3-4176-9f1b-2b3cabadf16e', 'Steel Coated Plate', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ccbb2fc7-d5a4-40bc-b355-bee4f030bb1a', 'd7bcc46d-ede3-4176-9f1b-2b3cabadf16e', 'c1bc6f2a-5143-4fa9-a0c6-c9905afa98c0', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b69ca6c0-937e-4351-af23-32f94d495a09', 'd7bcc46d-ede3-4176-9f1b-2b3cabadf16e', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d50c89ee-498d-477c-b1f2-a0e99edcc7ea', 'd7bcc46d-ede3-4176-9f1b-2b3cabadf16e', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 45);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6aff2e55-1e22-4219-a740-abcde3757f0d', 'Adhered Iron Plate', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5f1517a6-4957-461e-afb2-d1915f9f20df', '6aff2e55-1e22-4219-a740-abcde3757f0d', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 11.25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('051d1dd5-2f1e-4feb-9bb1-5eff1b7c31f4', '6aff2e55-1e22-4219-a740-abcde3757f0d', 'd84628e4-c85e-4c84-a136-32441a40a89e', 3.75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('751f40f0-b576-4a77-8c10-3cb891156e8e', '6aff2e55-1e22-4219-a740-abcde3757f0d', '30ec735b-10f7-4070-8668-0ce633b78686', 3.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('cb9eeec5-a565-4587-a4e9-6c2ebdd1203d', 'Bolted Iron Plate', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8a0b23ac-dc0a-4bfe-bde1-03a4bcecb169', 'cb9eeec5-a565-4587-a4e9-6c2ebdd1203d', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 90);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b122b29a-80f3-4436-ad69-085a8164957e', 'cb9eeec5-a565-4587-a4e9-6c2ebdd1203d', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 250);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d0dec5e3-14b9-46cd-8cd9-a1eda50499e0', 'cb9eeec5-a565-4587-a4e9-6c2ebdd1203d', '30ec735b-10f7-4070-8668-0ce633b78686', 15);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c390c9a4-a5c9-48dd-aa73-69fcadefbd48', 'Stitched Iron Plate', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('24c62b73-2fed-4d46-8323-c114fcaa5a47', 'c390c9a4-a5c9-48dd-aa73-69fcadefbd48', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 18.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b4effb56-892e-4330-ba8c-a678a39d78cf', 'c390c9a4-a5c9-48dd-aa73-69fcadefbd48', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 37.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('89e8e0e3-bae6-4cde-a2c2-af1a61b89061', 'c390c9a4-a5c9-48dd-aa73-69fcadefbd48', '30ec735b-10f7-4070-8668-0ce633b78686', 5.625);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('602d921f-cbd5-45cc-8eba-5c3417bd5d4c', 'Steamed Copper Sheet', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('db5f38a3-2f77-49a2-9c87-d6d444fde40b', '602d921f-cbd5-45cc-8eba-5c3417bd5d4c', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 22.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('cf6b47c0-2952-48e8-a3fe-91c1e607521d', '602d921f-cbd5-45cc-8eba-5c3417bd5d4c', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 22.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('7742a03b-5212-499c-9c10-0a4b96b3d50b', '602d921f-cbd5-45cc-8eba-5c3417bd5d4c', 'ec7d0ffa-3215-4246-8144-ed32683ca927', 22.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('07f2e331-4843-4b46-8045-84872f74b993', 'Alclad Casing', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ead11edc-556a-4705-9c0a-e76405d8e4b3', '07f2e331-4843-4b46-8045-84872f74b993', '5b2ba98e-bfa1-43ea-a211-42fe9977fbe4', 150);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8d965fa2-5d23-4581-a1cc-1d4dec038e3c', '07f2e331-4843-4b46-8045-84872f74b993', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c11d237b-28c9-4923-ae25-3f412650ec2c', '07f2e331-4843-4b46-8045-84872f74b993', '86053b5f-692d-4876-810b-b7eb32018a70', 112.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6cd5c2de-5cf7-436e-a3c6-4fb9579913e0', 'Encased Industrial Pipe', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5ab409c2-1876-49a7-b19d-b85918f21382', '6cd5c2de-5cf7-436e-a3c6-4fb9579913e0', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 28);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('c022e73c-0189-456f-a51f-e3cac520fc93', '6cd5c2de-5cf7-436e-a3c6-4fb9579913e0', 'e9978ec3-b882-40cf-8e93-a94936e66029', 20);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('9e2c6446-13cd-4f8e-864a-a37e77cc9ab0', '6cd5c2de-5cf7-436e-a3c6-4fb9579913e0', '3d9c502e-7825-4dc8-ae31-91b144ffb7fa', 4);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2c752f7e-26af-449a-b6f5-ece5523092cf', 'Bolted Frame', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5b52de5c-fcfe-4816-bb23-5431dd3ef612', '2c752f7e-26af-449a-b6f5-ece5523092cf', '30ec735b-10f7-4070-8668-0ce633b78686', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('37b150ce-dbdf-4510-8dc7-a319d6a733be', '2c752f7e-26af-449a-b6f5-ece5523092cf', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 140);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d005fdce-29c6-4f9d-8cea-f7691175bbe4', '2c752f7e-26af-449a-b6f5-ece5523092cf', '5ef1b273-a762-439b-aa60-50d9e4339544', 5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('0deda6ac-447f-4971-864c-6de4f9389b7e', 'Steeled Frame', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('92f3e7cc-c9ef-4983-8b73-820dc9d179b2', '0deda6ac-447f-4971-864c-6de4f9389b7e', '30ec735b-10f7-4070-8668-0ce633b78686', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('9bb5e799-656d-4211-bafe-a5da86a8a8e0', '0deda6ac-447f-4971-864c-6de4f9389b7e', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 10);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b479a1da-8810-4be7-a490-c0dde0ff48db', '0deda6ac-447f-4971-864c-6de4f9389b7e', '5ef1b273-a762-439b-aa60-50d9e4339544', 3);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('ecc473f7-72c0-48ac-876b-6a63154cf147', 'Heavy Encased Frame', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ff8d263c-b609-4e51-9580-b1939af03ad7', 'ecc473f7-72c0-48ac-876b-6a63154cf147', '5ef1b273-a762-439b-aa60-50d9e4339544', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('cbf80e6d-37af-46c0-8660-dff133f77ff3', 'ecc473f7-72c0-48ac-876b-6a63154cf147', '3d9c502e-7825-4dc8-ae31-91b144ffb7fa', 9.375);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1630eb18-af7f-4e49-9054-279ded766e11', 'ecc473f7-72c0-48ac-876b-6a63154cf147', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 33.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3260dec7-d9c6-41e9-a2dd-9133932a8b68', 'ecc473f7-72c0-48ac-876b-6a63154cf147', 'e9978ec3-b882-40cf-8e93-a94936e66029', 20.675);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('1a170b1b-646b-4715-865a-68ebaaa40cd9', 'ecc473f7-72c0-48ac-876b-6a63154cf147', '91bc0af9-9330-4243-a733-263a7c491efc', 2.8125);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('aefdb3d1-26f1-4516-838d-3947e85ad299', 'Heavy Flexible Frame', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8c98e411-8a42-44d4-9a6f-7951420b1054', 'aefdb3d1-26f1-4516-838d-3947e85ad299', '5ef1b273-a762-439b-aa60-50d9e4339544', 18.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('c486f541-8b2b-4c5e-8b9b-712170bb4420', 'aefdb3d1-26f1-4516-838d-3947e85ad299', '3d9c502e-7825-4dc8-ae31-91b144ffb7fa', 11.25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('fec8497a-e828-4d56-80ba-3615bc8445a8', 'aefdb3d1-26f1-4516-838d-3947e85ad299', 'd84628e4-c85e-4c84-a136-32441a40a89e', 75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('89eadcb3-d9ec-499e-87a7-5615fc55c567', 'aefdb3d1-26f1-4516-838d-3947e85ad299', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 390);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('022ca852-3859-4228-8968-cc207ca3cde8', 'aefdb3d1-26f1-4516-838d-3947e85ad299', '91bc0af9-9330-4243-a733-263a7c491efc', 3.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2e93809d-2e7e-4a20-a35c-5cad12fa431f', 'Heat-Fused Frame', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('157ef8fa-0de8-4811-8576-79d27488a7b7', '2e93809d-2e7e-4a20-a35c-5cad12fa431f', '91bc0af9-9330-4243-a733-263a7c491efc', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3c14ef8c-1a80-492d-b6f7-3dd3a6587d36', '2e93809d-2e7e-4a20-a35c-5cad12fa431f', '5b2ba98e-bfa1-43ea-a211-42fe9977fbe4', 150);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('e70ca010-2211-4e2d-8a7d-6e965b0ac28d', '2e93809d-2e7e-4a20-a35c-5cad12fa431f', '2af11634-1e00-41bd-9051-86fb018cada4', 24);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('cf6b0469-f50d-4547-965f-f6e79622e12c', '2e93809d-2e7e-4a20-a35c-5cad12fa431f', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('71efb0c7-fdf6-4495-821f-9145d0983aa9', '2e93809d-2e7e-4a20-a35c-5cad12fa431f', '780a0ead-b6fe-4c3e-8707-48321e18d43b', 3);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('f2324133-30f7-4145-a167-e136e1c7b42d', 'Polyester Fabric', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('70dfa842-cdf2-4527-b9d2-a8ecfb8064fe', 'f2324133-30f7-4145-a167-e136e1c7b42d', '11ecce3d-8787-41dc-91ee-f9fb40aca645', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3cf2b1a3-1d6e-487d-8f6a-25b6bd8598c5', 'f2324133-30f7-4145-a167-e136e1c7b42d', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('10222bc4-9a61-4202-b49d-33d2f75b16cf', 'f2324133-30f7-4145-a167-e136e1c7b42d', 'b65bbfe4-c24a-42e1-abbf-3ba5af4eda8e', 30);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('1462174d-39f0-433c-998e-96a2a57307c2', 'Recycled Plastic', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('40006097-b7ff-4463-a139-5939ebea8896', '1462174d-39f0-433c-998e-96a2a57307c2', 'd84628e4-c85e-4c84-a136-32441a40a89e', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('31407223-43b0-49ec-8f11-3f990945a62f', '1462174d-39f0-433c-998e-96a2a57307c2', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('5dddca99-004d-4ab6-b47e-29344c3a6d76', '1462174d-39f0-433c-998e-96a2a57307c2', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 60);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('15688795-c356-40be-adf2-ba6835f56140', 'Residual Plastic', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3bf819e1-0f56-430b-88e8-4f48f74060df', '15688795-c356-40be-adf2-ba6835f56140', '11ecce3d-8787-41dc-91ee-f9fb40aca645', 60);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a8773b5a-c642-4d1c-b6e8-e8f9b81faa2f', '15688795-c356-40be-adf2-ba6835f56140', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 20);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('defa2c95-4ae8-4ba5-a446-97cd6fa69969', '15688795-c356-40be-adf2-ba6835f56140', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 20);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('4f022cc5-b0cd-4a5f-af1b-17978864b3dc', 'Recycled Rubber', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('417f2a30-caed-417c-8180-d14e999f33f9', '4f022cc5-b0cd-4a5f-af1b-17978864b3dc', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8cb1d459-966b-4884-8169-447aa23b032d', '4f022cc5-b0cd-4a5f-af1b-17978864b3dc', '01472eb4-b680-4f08-9e19-8690a9e3aef4', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('bd9d6a85-bfd5-41f9-94d8-2d36f48f44b7', '4f022cc5-b0cd-4a5f-af1b-17978864b3dc', 'd84628e4-c85e-4c84-a136-32441a40a89e', 60);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('df048bcd-498c-41e6-8fc5-c5f56314cc8f', 'Residual Rubber', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f8ed47a8-aa1d-41c8-aa13-ae06f52a21df', 'df048bcd-498c-41e6-8fc5-c5f56314cc8f', '11ecce3d-8787-41dc-91ee-f9fb40aca645', 40);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ecd36be0-1b6f-4393-ba08-97e82236dff8', 'df048bcd-498c-41e6-8fc5-c5f56314cc8f', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 40);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('1e65a6b9-2472-4b41-90f2-fb7832427fbc', 'df048bcd-498c-41e6-8fc5-c5f56314cc8f', 'd84628e4-c85e-4c84-a136-32441a40a89e', 20);
+
+-- ALTERNATE INDUSTRIAL PARTS
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('777fe3f6-e516-4110-b3e8-45c4fb24a077', 'Copper Rotor', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5fe1fe5f-31ef-44ad-8bac-aaa34011f493', '777fe3f6-e516-4110-b3e8-45c4fb24a077', 'ec7d0ffa-3215-4246-8144-ed32683ca927', 22.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2a3dce3d-347c-4a36-b8e7-7c5e89594c0f', '777fe3f6-e516-4110-b3e8-45c4fb24a077', '65276ada-78c9-4bf2-9cbd-7655c75ee9ac', 195);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('e59e4a04-675d-40ff-8234-be3089a8d7a9', '777fe3f6-e516-4110-b3e8-45c4fb24a077', '7c63a989-5db7-4701-a259-e44f8d88803d', 11.25);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('cb3b2a19-7458-4782-8cd4-f717e9c31392', 'Steel Rotor', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('588d5199-3b96-480d-a36d-efefd5adb72b', 'cb3b2a19-7458-4782-8cd4-f717e9c31392', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 10);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1a72e601-3303-4806-86e2-107a7b061599', 'cb3b2a19-7458-4782-8cd4-f717e9c31392', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('959c4ade-2017-4b11-a851-4e2bb1b5a79b', 'cb3b2a19-7458-4782-8cd4-f717e9c31392', '7c63a989-5db7-4701-a259-e44f8d88803d', 5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2af687ed-0fa2-4cce-be09-191877b4d138', 'Quickwire Stator', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('52974322-0f0d-4186-93f1-9a429b764984', '2af687ed-0fa2-4cce-be09-191877b4d138', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 16);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7bcbace2-99de-4e7e-b7dd-a9661bf342e0', '2af687ed-0fa2-4cce-be09-191877b4d138', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('082f5c07-7c15-41dc-85f6-9f227f04bc3a', '2af687ed-0fa2-4cce-be09-191877b4d138', 'd7cac322-057a-41af-8ca0-28cb0ad221fc', 8);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('f22b499e-f59a-4462-adcf-7b2e2e535e06', 'Classic Battery', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('0407be9e-0409-4e5a-ab60-1d006e408c97', 'f22b499e-f59a-4462-adcf-7b2e2e535e06', '2ff52414-1041-4d16-b68e-efc253325b9b', 45);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('df0d2df9-e4d8-4836-8aef-0453fbabf0ed', 'f22b499e-f59a-4462-adcf-7b2e2e535e06', '5b555c71-6096-4722-9d4f-1960bf6e75e8', 52.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('865f4e15-66c5-4b61-aee1-f6b6a8851321', 'f22b499e-f59a-4462-adcf-7b2e2e535e06', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 60);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4437b072-2b91-45f8-9447-dfc18a6d60b8', 'f22b499e-f59a-4462-adcf-7b2e2e535e06', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 90);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('0e5e89fb-d0af-4179-b80d-f5e869d937a7', 'f22b499e-f59a-4462-adcf-7b2e2e535e06', 'e748aba0-b7fb-4ba1-ba98-65f81d2438dd', 30);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('e5a15950-6d71-4415-a6da-165486978964', 'Electric Motor', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('74d2f9ca-df72-480b-a82e-fbb49d61f214', 'e5a15950-6d71-4415-a6da-165486978964', '0005c281-6ac8-4c40-b6b0-b40c3cf14853', 3.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('aae8c452-3870-4a09-b5d0-2f5cde2a23b9', 'e5a15950-6d71-4415-a6da-165486978964', '7c63a989-5db7-4701-a259-e44f8d88803d', 7.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b6799e45-6fdb-49a3-bd55-52fa1bd5b4b4', 'e5a15950-6d71-4415-a6da-165486978964', '710b2676-395d-405b-b235-64fd1e1377d2', 7.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('d1a20837-5e18-4d0a-85f8-a89199ea6a5f', 'Rigour Motor', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('16ee1825-fa7b-4e96-a97c-072ff9a516ec', 'd1a20837-5e18-4d0a-85f8-a89199ea6a5f', '7c63a989-5db7-4701-a259-e44f8d88803d', 3.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d610a211-38b7-4f51-a037-3ee1f2232c9d', 'd1a20837-5e18-4d0a-85f8-a89199ea6a5f', 'd7cac322-057a-41af-8ca0-28cb0ad221fc', 3.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7dd97c66-b1f9-4e78-8b31-75909223ed4d', 'd1a20837-5e18-4d0a-85f8-a89199ea6a5f', 'b0f00547-4ec9-47ec-a905-012809436bc5', 1.25);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('1f07b82f-5ad9-462f-a2c8-9d85fc3cfee1', 'd1a20837-5e18-4d0a-85f8-a89199ea6a5f', '710b2676-395d-405b-b235-64fd1e1377d2', 7.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2144b888-5c63-4bd0-85a7-ba4d8d113fe7', 'Heat Exchanger', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8e3dd6ab-3aa6-452f-a8b3-c310da38a498', '2144b888-5c63-4bd0-85a7-ba4d8d113fe7', '86053b5f-692d-4876-810b-b7eb32018a70', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('46c20c41-1da6-4e2d-a1a7-4ee10d8572b9', '2144b888-5c63-4bd0-85a7-ba4d8d113fe7', 'd84628e4-c85e-4c84-a136-32441a40a89e', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('20d25317-2987-46a0-909d-645c923a6f40', '2144b888-5c63-4bd0-85a7-ba4d8d113fe7', '1ab44fe6-657c-4da2-9b2e-97c9d6e8c4ef', 10);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6964a851-34c7-4514-8699-2b5ab68c9929', 'Cooling Device', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8af01f44-27f2-45d7-8cfd-a5d067f87db1', '6964a851-34c7-4514-8699-2b5ab68c9929', '1ab44fe6-657c-4da2-9b2e-97c9d6e8c4ef', 9.375);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('19cb7143-f5f5-4f8c-adb6-a125876ea97a', '6964a851-34c7-4514-8699-2b5ab68c9929', '710b2676-395d-405b-b235-64fd1e1377d2', 1.875);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4c8c0e69-51cc-469a-a264-40a20534662a', '6964a851-34c7-4514-8699-2b5ab68c9929', '9eb028d9-3081-443c-a404-a23eab84e655', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c9e9b5c1-06c5-45b0-a0f1-9c2d75930329', '6964a851-34c7-4514-8699-2b5ab68c9929', 'ab3fb3b2-d551-4bb1-9bc3-86624a17d8a9', 3.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', 'Turbo Electric Motor', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('cda756cf-b9e4-4c77-a8d8-34234c431253', 'c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', '710b2676-395d-405b-b235-64fd1e1377d2', 6.5625);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a41c4502-095b-45dd-b1b5-8bd9880e14e7', 'c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', '7fe500f8-db06-4107-a039-ce6a8a7b2e68', 8.4375);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('dc57226e-19c7-4b4e-876d-2565f12e4dcd', 'c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', '0005c281-6ac8-4c40-b6b0-b40c3cf14853', 4.6875);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('948742cf-8287-43aa-95a3-18e604a20292', 'c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', '7c63a989-5db7-4701-a259-e44f8d88803d', 6.5625);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('6dae6386-b65a-40c8-9952-0a5622062895', 'c1016c5c-bc83-40fe-8b66-303ec0bfdd7e', '7256a374-b25b-4e2f-b042-252f5cbb7f09', 2.8125);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('867d6d90-4aac-4166-8c59-17d8c6573a23', 'Turbo Pressure Motor', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('619c107c-b3f5-4459-9fd0-524a699486c4', '867d6d90-4aac-4166-8c59-17d8c6573a23', '710b2676-395d-405b-b235-64fd1e1377d2', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4b129113-6ef1-4f69-b850-fc42249f7cbf', '867d6d90-4aac-4166-8c59-17d8c6573a23', 'caa19392-f375-4cb2-86cf-d74484cd62e4', 1.875);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('61a973fc-c9ca-4305-94e7-582fce1d050c', '867d6d90-4aac-4166-8c59-17d8c6573a23', 'e910fa9a-fec9-4411-8427-b872b01a6bd3', 45);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5eb46060-ea64-4a2c-8be3-b21bf898c242', '867d6d90-4aac-4166-8c59-17d8c6573a23', 'd7cac322-057a-41af-8ca0-28cb0ad221fc', 15);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('685e676f-319c-4b31-bf60-6c1098c7f8a5', '867d6d90-4aac-4166-8c59-17d8c6573a23', '7256a374-b25b-4e2f-b042-252f5cbb7f09', 3.75);
+
+-- ALTERNATE ELECTRONICS RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('b28aab1a-ee4b-4960-b6fd-76118ee0b0f8', 'Caterium Wire', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('4ca18457-ca59-468e-903d-26921109fc91', 'b28aab1a-ee4b-4960-b6fd-76118ee0b0f8', '067b5427-8cf8-4b09-aadf-b3ecaf1aa333', 15);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('7c55d5d3-0e3e-411a-89e3-14c6aaab2555', 'b28aab1a-ee4b-4960-b6fd-76118ee0b0f8', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 120);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('ce111118-5ee9-489c-8c77-d02d031e3d68', 'Fused Wire', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('12759599-0f77-4ab4-8a3f-6ce569941b9f', 'ce111118-5ee9-489c-8c77-d02d031e3d68', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 12);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('01d61d44-78b1-40bb-b989-ecb2bfda5ea8', 'ce111118-5ee9-489c-8c77-d02d031e3d68', '067b5427-8cf8-4b09-aadf-b3ecaf1aa333', 3);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('924fff5d-8236-4685-8029-d0ae693c27c8', 'ce111118-5ee9-489c-8c77-d02d031e3d68', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 90);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('e47341d9-fc40-4a8f-ac6c-c8fb2ef8b05e', 'Iron Wire', 3);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('459c5320-da8e-4628-afc8-40aab8e76650', 'e47341d9-fc40-4a8f-ac6c-c8fb2ef8b05e', '2d78437a-8152-4e9b-8df2-9e9b8f3fe91b', 12.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('acdfa097-6641-49e0-b61a-94f6072a4e82', 'e47341d9-fc40-4a8f-ac6c-c8fb2ef8b05e', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 22.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('9566af16-952d-4168-898a-ea3cb73b246a', 'Coated Cable', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('fddacbc3-d248-4a07-b573-d930418d2923', '9566af16-952d-4168-898a-ea3cb73b246a', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 37.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b6aa3880-7993-4293-924f-97d3978dff31', '9566af16-952d-4168-898a-ea3cb73b246a', '03ab8a1b-6e94-406b-b362-31938e984e2d', 15);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('b1565817-0d87-41bc-ac7e-4667f8e7ae10', '9566af16-952d-4168-898a-ea3cb73b246a', '70fecdf3-c0f9-437f-8822-41bf0e9ff435', 67.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('6882950b-f108-40e3-a135-c427d396dbed', 'Insulated Cable', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ea95b50d-b584-4c49-b739-92b162ba723f', '6882950b-f108-40e3-a135-c427d396dbed', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 45);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('ac30d457-23d0-4e50-8884-b3ba7a0af700', '6882950b-f108-40e3-a135-c427d396dbed', 'd84628e4-c85e-4c84-a136-32441a40a89e', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('5ea6e6ce-01fe-46f1-8f4f-61711234ac7b', '6882950b-f108-40e3-a135-c427d396dbed', '70fecdf3-c0f9-437f-8822-41bf0e9ff435', 100);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('80b1024a-a656-483b-b897-f5c362800f39', 'Quickwire Cable', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a4239a41-32bf-4ad0-b9b2-9c3bad972272', '80b1024a-a656-483b-b897-f5c362800f39', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f94ef152-e89c-465e-b813-4b4e65074af6', '80b1024a-a656-483b-b897-f5c362800f39', 'd84628e4-c85e-4c84-a136-32441a40a89e', 5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c7eff59a-98a7-4ff9-8f5f-4241564c781e', '80b1024a-a656-483b-b897-f5c362800f39', '70fecdf3-c0f9-437f-8822-41bf0e9ff435', 27.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2943b7dc-7693-4014-82ec-84f94ef5f94c', 'Fused Quickwire', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('0776a480-1d05-4c95-8944-bbbf6b24f739', '2943b7dc-7693-4014-82ec-84f94ef5f94c', '067b5427-8cf8-4b09-aadf-b3ecaf1aa333', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2c80cc29-06b1-4de9-8b11-3f2684e8f566', '2943b7dc-7693-4014-82ec-84f94ef5f94c', '96d0af82-d8e3-4d57-b2fd-ab2b16a24f17', 37.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('1b3bad2c-4ee6-4cb4-9a72-5b1b3b9e42cb', '2943b7dc-7693-4014-82ec-84f94ef5f94c', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 90);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('7e74de5b-ab14-4d2c-a5e9-b7a52b927792', 'Caterium Circuit Board', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('0d149e63-d191-4b6b-ac06-9910ce79eb50', '7e74de5b-ab14-4d2c-a5e9-b7a52b927792', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 12.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d04023c5-1ace-4ddf-91c9-b27cf73c2d7e', '7e74de5b-ab14-4d2c-a5e9-b7a52b927792', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 37.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('46e8d50b-a2be-4565-b1ef-4e7f99de0a53', '7e74de5b-ab14-4d2c-a5e9-b7a52b927792', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 8.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('3cb73411-a310-485e-b95d-c1b257599b38', 'Electrode Circuit Board', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('82c51fcc-52fe-41f7-bff1-426050a548ec', '3cb73411-a310-485e-b95d-c1b257599b38', 'd84628e4-c85e-4c84-a136-32441a40a89e', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('01f8be80-0b5e-49f4-b011-05e81fbfd84b', '3cb73411-a310-485e-b95d-c1b257599b38', '1ee1a2bb-3539-4075-95ba-9543f879e3c1', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('236147c0-689f-4a83-b635-03d3ff8a33b2', '3cb73411-a310-485e-b95d-c1b257599b38', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('003c844e-c687-4a81-86ef-9f7871f6aafd', 'Silicon Circuit Board', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a2dd8f53-ee3b-423a-a9da-0a9d676ecff6', '003c844e-c687-4a81-86ef-9f7871f6aafd', 'ec7d0ffa-3215-4246-8144-ed32683ca927', 27.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5c6512eb-2591-4c0d-b9cb-8e72eae1b13e', '003c844e-c687-4a81-86ef-9f7871f6aafd', 'cd229d3e-85da-4a02-b598-08dc76028222', 27.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('7dc65515-7b12-4e12-9e82-ee6865590e56', '003c844e-c687-4a81-86ef-9f7871f6aafd', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 12.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('1abbbf42-ca6c-4b0f-b229-eec052f8be6f', 'Silicon High-Speed Connector', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('37f182d1-3278-49db-810b-e5fa5133817b', '1abbbf42-ca6c-4b0f-b229-eec052f8be6f', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 90);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('9d7c6c4f-2048-4531-abea-f3ddec0893fa', '1abbbf42-ca6c-4b0f-b229-eec052f8be6f', 'cd229d3e-85da-4a02-b598-08dc76028222', 37.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1296bc40-92a0-4aed-80a8-10a9d892f0d9', '1abbbf42-ca6c-4b0f-b229-eec052f8be6f', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 3);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('fb1b2e06-c3ba-4613-a780-71bd6e363bd1', '1abbbf42-ca6c-4b0f-b229-eec052f8be6f', '0b614cb1-e391-4439-ade3-d21a41b64a07', 3);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('1c0a4275-d518-4531-ada0-6e04f747e132', 'Caterium Computer', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('0ac14425-7458-4e9b-b31d-fd84abc1450d', '1c0a4275-d518-4531-ada0-6e04f747e132', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 26.25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('e1096a20-737a-40ac-8fc4-826b2c277864', '1c0a4275-d518-4531-ada0-6e04f747e132', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 105);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('e316fcca-cfde-4acf-a124-8918c37a1012', '1c0a4275-d518-4531-ada0-6e04f747e132', 'd84628e4-c85e-4c84-a136-32441a40a89e', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c022125b-ad52-4acc-b87c-73f62982a144', '1c0a4275-d518-4531-ada0-6e04f747e132', '5dbe02d2-a6b0-4b05-94d9-8a559d058f85', 3.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('b969c33b-aebf-4cd4-94b9-f79d99f30514', 'Crystal Computer', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a53ce721-81b3-440b-ab93-a0b9aec5c1d7', 'b969c33b-aebf-4cd4-94b9-f79d99f30514', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5f77d098-be7b-4eaf-9069-b523252fc31a', 'b969c33b-aebf-4cd4-94b9-f79d99f30514', 'b0f00547-4ec9-47ec-a905-012809436bc5', 2.81251);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('99386a4d-47b2-4820-a4e2-4c88ffe9e73f', 'b969c33b-aebf-4cd4-94b9-f79d99f30514', '5dbe02d2-a6b0-4b05-94d9-8a559d058f85', 2.8125);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('dc4ae602-c391-488f-b417-1c7a60e57c91', 'OC Supercomputer', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3da67ec9-9a89-4e97-af36-b246460ad76a', 'dc4ae602-c391-488f-b417-1c7a60e57c91', '7fe500f8-db06-4107-a039-ce6a8a7b2e68', 9);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('bb252cfa-d25b-40ea-9bdc-e1cb0d6ef39b', 'dc4ae602-c391-488f-b417-1c7a60e57c91', 'ab3fb3b2-d551-4bb1-9bc3-86624a17d8a9', 9);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('ebf7f056-61d3-43fb-a419-87a7cc9a34aa', 'dc4ae602-c391-488f-b417-1c7a60e57c91', '6adee73d-3b3e-4e2c-a4f5-34961bf26a74', 3);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c516466b-19b3-471f-85dd-f3b86cb37ffc', 'Super-State Computer', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5cd84f99-f599-4949-90bf-14413838033c', 'c516466b-19b3-471f-85dd-f3b86cb37ffc', '5dbe02d2-a6b0-4b05-94d9-8a559d058f85', 3.6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a0df7df8-98b7-4fd8-9753-35afa57f1ab0', 'c516466b-19b3-471f-85dd-f3b86cb37ffc', '0005c281-6ac8-4c40-b6b0-b40c3cf14853', 2.4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2f50dc9b-e933-4ec0-904f-8b0e1d06402e', 'c516466b-19b3-471f-85dd-f3b86cb37ffc', 'e748aba0-b7fb-4ba1-ba98-65f81d2438dd', 24);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('82173ff6-739c-4372-981e-f4094364b3eb', 'c516466b-19b3-471f-85dd-f3b86cb37ffc', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 54);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('bac21448-e2a6-455a-aae5-b1d05d0acbb4', 'c516466b-19b3-471f-85dd-f3b86cb37ffc', '6adee73d-3b3e-4e2c-a4f5-34961bf26a74', 2.4);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('03247553-d408-49e0-b57c-d27913d555d7', 'Radio Connection Unit', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('c9cf467e-4a6d-4cf3-8936-1db3616cf382', '03247553-d408-49e0-b57c-d27913d555d7', '1ab44fe6-657c-4da2-9b2e-97c9d6e8c4ef', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('01334275-3d90-4dbe-a87c-4b704536ac72', '03247553-d408-49e0-b57c-d27913d555d7', '0b614cb1-e391-4439-ade3-d21a41b64a07', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('035f4eda-6308-4bc5-a641-6bfde21ea110', '03247553-d408-49e0-b57c-d27913d555d7', '7d8858d3-3c54-4e99-9ec7-88961a8f883f', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('14c44097-e505-499f-bfd6-0038e80d60e7', '03247553-d408-49e0-b57c-d27913d555d7', '7fe500f8-db06-4107-a039-ce6a8a7b2e68', 3.75);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('126531d2-6c02-40cf-9105-3aeea9b57f4e', 'Radio Control System', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('96281d04-e788-4976-9551-af30a1f2101e', '126531d2-6c02-40cf-9105-3aeea9b57f4e', 'b0f00547-4ec9-47ec-a905-012809436bc5', 1.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d22c2d50-e321-482b-b418-cef1cbccd642', '126531d2-6c02-40cf-9105-3aeea9b57f4e', '17666ba2-83ae-41f0-b021-bdd1187f9b6c', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3262873d-6a5f-423b-8def-217d09ed0a5c', '126531d2-6c02-40cf-9105-3aeea9b57f4e', '86053b5f-692d-4876-810b-b7eb32018a70', 90);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('9bf114b5-b035-4e34-b7e3-3e5c77705332', '126531d2-6c02-40cf-9105-3aeea9b57f4e', 'd84628e4-c85e-4c84-a136-32441a40a89e', 45);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('ccfddd43-5bf2-4f87-8339-eee33b991822', '126531d2-6c02-40cf-9105-3aeea9b57f4e', '7fe500f8-db06-4107-a039-ce6a8a7b2e68', 4.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('c51dcff6-d3b5-4bc4-bd94-6f74c1d72742', 'Insulated Crystal Oscillator', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8b9d0131-a9c6-4d27-9f2f-2471a1d3507e', 'c51dcff6-d3b5-4bc4-bd94-6f74c1d72742', '7d8858d3-3c54-4e99-9ec7-88961a8f883f', 18.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('73d1ce2e-ced7-4acd-9204-763212b11f48', 'c51dcff6-d3b5-4bc4-bd94-6f74c1d72742', 'd84628e4-c85e-4c84-a136-32441a40a89e', 13.1275);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('71f2bb82-1477-4893-be9c-c51855a8dbc0', 'c51dcff6-d3b5-4bc4-bd94-6f74c1d72742', 'd99200f3-b141-4238-be9d-c9ec633fda7b', 1.875);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('331971ef-8cef-40aa-9c5b-4e86b0be2d82', 'c51dcff6-d3b5-4bc4-bd94-6f74c1d72742', 'b0f00547-4ec9-47ec-a905-012809436bc5', 1.875);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('a48f4ad7-12b5-4fb4-acbc-733fcc952fdb', 'Coated Iron Canister', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('37cb3629-7d99-45c7-bc99-0822e19f99e2', 'a48f4ad7-12b5-4fb4-acbc-733fcc952fdb', 'da97eb3b-6546-44c7-bca5-b40ed84d1125', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('258aaaff-9c87-4400-9335-e2b68fecc3a1', 'a48f4ad7-12b5-4fb4-acbc-733fcc952fdb', 'ec7d0ffa-3215-4246-8144-ed32683ca927', 15);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('24e3c04f-b65f-435d-820c-e85952995c54', 'a48f4ad7-12b5-4fb4-acbc-733fcc952fdb', '15bccf69-9c55-413b-bf99-2858d7653f3f', 60);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('5d9469e1-ee9b-4f2c-9fbf-613fcc2d02bb', 'Diluted Packaged Fuel', 6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8f9c67a7-1bae-4f50-ab78-69aedb2b3955', '5d9469e1-ee9b-4f2c-9fbf-613fcc2d02bb', '03ab8a1b-6e94-406b-b362-31938e984e2d', 30);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('39f0557f-e2e2-484e-a6d7-94ded44066a7', '5d9469e1-ee9b-4f2c-9fbf-613fcc2d02bb', '5dbcad17-bf69-43d6-ba9e-d489014884a7', 60);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('425b7680-7e0e-4286-99d7-b448fe1cf9b0', '5d9469e1-ee9b-4f2c-9fbf-613fcc2d02bb', '8f1e4160-e248-4141-b91d-873e97b60c99', 60);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', 'Uranium Fuel Unit', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1fe23ef1-f464-4ae9-aba0-3a8dde25119e', 'cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', '7cd4bb4f-17d2-4ebc-bceb-fa3b28c79e3a', 20);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('84542640-adb2-428d-9bf5-cfc8ad02fa0c', 'cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', '0005c281-6ac8-4c40-b6b0-b40c3cf14853', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('037a2a15-9b52-4ded-9385-3d34f3fca8c0', 'cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', 'b0f00547-4ec9-47ec-a905-012809436bc5', 0.6);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f69fa849-857a-4572-b467-1114d0e2f336', 'cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', 'b5cd8cdd-bd30-4802-86c2-1f3b26bbed60', 1.2);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('e33757e4-f976-4ed0-bd93-0ed4e686aaf9', 'cdc5f4e5-97b4-40e9-86bf-98c7cd800b4d', 'e0464fff-2408-416d-83d8-791597028293', 0.6);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('80523e66-f6c7-44ec-ad81-98369f05c5ba', 'Plutonium Fuel Unit', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b989e274-7895-4614-b870-f3feec8c6774', '80523e66-f6c7-44ec-ad81-98369f05c5ba', 'cf482502-902f-4f7a-b685-a8a8425d8a6a', 10);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a2d042e0-e91f-4a0e-acc8-48e433c099aa', '80523e66-f6c7-44ec-ad81-98369f05c5ba', 'caa19392-f375-4cb2-86cf-d74484cd62e4', 0.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('2ccf6399-b810-43a9-b0e7-bfa55c1c9af7', '80523e66-f6c7-44ec-ad81-98369f05c5ba', '3b4a9bef-b5cd-43f4-bf28-776210050aa8', 0.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('62eb3732-88fa-4707-b6a5-44cbbea659f4', 'Fine Black Powder', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b8912742-dce7-411c-997b-753fbc99a585', '62eb3732-88fa-4707-b6a5-44cbbea659f4', '2ff52414-1041-4d16-b68e-efc253325b9b', 7.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5c943e22-1b94-43e5-9f17-4871e4b8d0eb', '62eb3732-88fa-4707-b6a5-44cbbea659f4', '2af25498-23e7-44ac-a559-76963785c211', 3.75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d3ac4158-92c2-4d64-abab-8847ab7e4a6f', '62eb3732-88fa-4707-b6a5-44cbbea659f4', '13119de9-ab33-4b98-b880-96ccf6b79aac', 15);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('11de0c2d-44b8-44ac-8de3-391ca748755e', 'Crystal Beacon', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('9cbfdfe4-c6c8-456e-8f9a-04fc32f363bb', '11de0c2d-44b8-44ac-8de3-391ca748755e', 'ae0a493b-e348-48ee-858f-52fde2dad5a7', 2);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('47d2d9f8-ab05-44ab-b18b-59394abb9b74', '11de0c2d-44b8-44ac-8de3-391ca748755e', 'be34591f-e6bf-49ac-a9b2-6d56a59422cf', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('d4737b12-6ded-46cc-bb27-ed3e1c75d21c', '11de0c2d-44b8-44ac-8de3-391ca748755e', 'b0f00547-4ec9-47ec-a905-012809436bc5', 0.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('19bdd082-3835-425a-9167-67bc9538217f', '11de0c2d-44b8-44ac-8de3-391ca748755e', 'b5cd8cdd-bd30-4802-86c2-1f3b26bbed60', 10);
+
+-- ALTERNATE NUCLEAR RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('218e5dd7-ae69-4d3b-9210-f1df9e682418', 'Electromagnetic Connection Rod', 4);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('28c4e92d-89fa-4444-990d-543d7a6b7a5f', '218e5dd7-ae69-4d3b-9210-f1df9e682418', 'd7cac322-057a-41af-8ca0-28cb0ad221fc', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5c5cdd2a-c290-46de-bb54-a097464b5777', '218e5dd7-ae69-4d3b-9210-f1df9e682418', '0b614cb1-e391-4439-ade3-d21a41b64a07', 4);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('2baecc42-a393-46a2-ae85-7b41b0e52253', '218e5dd7-ae69-4d3b-9210-f1df9e682418', '0005c281-6ac8-4c40-b6b0-b40c3cf14853', 8);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('50eb629c-fa01-404b-8383-45cb1153ea64', 'Infused Uranium Cell', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('2aa6d207-6de6-4455-a0ca-4b1ac39eaba6', '50eb629c-fa01-404b-8383-45cb1153ea64', '61797338-8b77-4a2f-8c67-bc3899b8a214', 25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('3991ad89-34c3-4903-a0ce-c0bb3f156802', '50eb629c-fa01-404b-8383-45cb1153ea64', 'cd229d3e-85da-4a02-b598-08dc76028222', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('84c91623-1b08-4d6e-8476-06b19d81a7c8', '50eb629c-fa01-404b-8383-45cb1153ea64', '2ff52414-1041-4d16-b68e-efc253325b9b', 25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8b8ab2cd-e732-419e-9524-8d1d282a3f78', '50eb629c-fa01-404b-8383-45cb1153ea64', '0efee9ac-e5c6-477c-a623-d2cc43efe55b', 75);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('96625652-3dc5-4498-b461-fefcc4d672b3', '50eb629c-fa01-404b-8383-45cb1153ea64', '7cd4bb4f-17d2-4ebc-bceb-fa3b28c79e3a', 20);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('f6245769-8bea-4999-bbc5-a1b7cd775ad9', 'Fertile Uranium', 8);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b65ce950-7589-4051-bf4b-18eebdcd6df0', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', '61797338-8b77-4a2f-8c67-bc3899b8a214', 25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('7e677c6c-5a6c-4459-9f61-07dce8d9b2f1', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', '7b175c54-6f00-4f33-bd65-5e58a770a05e', 25);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('f24ddcd0-ce27-4e9f-8f45-fadf740edcfb', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', '2af11634-1e00-41bd-9051-86fb018cada4', 15);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('73232039-cf06-4cf9-8b3f-fe9268a844af', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', 'ee513342-5416-42a3-9866-11f2cedf482d', 25);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('d3eae171-610b-4a4a-9804-b59fa0a5d121', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', '3067af4a-98ff-4595-9d59-997c80e26c58', 100);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('c0e733b7-b40f-4065-88e1-d3a1207dfba0', 'f6245769-8bea-4999-bbc5-a1b7cd775ad9', '0d2bbba9-8db0-4cdf-855a-dc1d9bb6bf7b', 40);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('fb8fff35-8a28-4092-be05-22664c853b03', 'Instant Plutonium Cell', 9);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('8051a9fc-81d5-48c1-8e1d-a6da32dd79aa', 'fb8fff35-8a28-4092-be05-22664c853b03', '3067af4a-98ff-4595-9d59-997c80e26c58', 75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('90611ae7-3de2-4860-9799-7617ae21c7de', 'fb8fff35-8a28-4092-be05-22664c853b03', '86053b5f-692d-4876-810b-b7eb32018a70', 10);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('15d582d4-f7c7-45dc-8a27-831a666114b9', 'fb8fff35-8a28-4092-be05-22664c853b03', 'cf482502-902f-4f7a-b685-a8a8425d8a6a', 10);
+
+--ALTERNATE SPECIAL RECIPES
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('2dce69fb-c746-499b-816c-0e09ccf4d94d', 'Plastic Smart Plating', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('dcf31e58-a289-42fb-b5cf-b0d9181b84bf', '2dce69fb-c746-499b-816c-0e09ccf4d94d', '30ec735b-10f7-4070-8668-0ce633b78686', 2.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('955cd917-a72d-4e1e-951f-eff1ca322bf5', '2dce69fb-c746-499b-816c-0e09ccf4d94d', '7c63a989-5db7-4701-a259-e44f8d88803d', 2.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('5595ccb6-585b-449d-b2ab-4949ee376bf7', '2dce69fb-c746-499b-816c-0e09ccf4d94d', '0be9af4f-1e82-4fb5-b31d-35bce21769aa', 7.5);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('617e93b0-6e4e-45b0-8cc8-3f4d3bd3953e', '2dce69fb-c746-499b-816c-0e09ccf4d94d', 'b4fcb7e9-ffb7-4ccb-aa23-30f2d6006294', 5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('77943d56-9072-4c6f-b5d7-200a2dc87f48', 'Flexible Framework', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('1a549eb7-2d36-4e3d-a7d2-43ae1afa8274', '77943d56-9072-4c6f-b5d7-200a2dc87f48', '5ef1b273-a762-439b-aa60-50d9e4339544', 3.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('fcfb7bf7-2bf5-47c5-92f8-f4cc4fef2cd6', '77943d56-9072-4c6f-b5d7-200a2dc87f48', 'ae0a493b-e348-48ee-858f-52fde2dad5a7', 22.5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('b09a7ea6-cb9f-4ab1-a13d-f93dc1b9a6bf', '77943d56-9072-4c6f-b5d7-200a2dc87f48', 'd84628e4-c85e-4c84-a136-32441a40a89e', 30);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('cb357fae-82aa-4d0b-a722-b5deca8b3f6c', '77943d56-9072-4c6f-b5d7-200a2dc87f48', '61b219a2-326e-4036-a4fb-2c89ad7e45e7', 7.5);
+
+INSERT INTO "Recipe" ("Id", "Name", "MadeIn") VALUES ('4e115703-b411-45f4-8af2-e81f94bd0d23', 'Automated Speed Wiring', 5);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('131f6470-4599-4a85-83dc-ead90b89475f', '4e115703-b411-45f4-8af2-e81f94bd0d23', 'd7cac322-057a-41af-8ca0-28cb0ad221fc', 3.75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('a5f56edf-cb08-4bd3-abc9-e285d41104f9', '4e115703-b411-45f4-8af2-e81f94bd0d23', '2e4298f8-f281-42e8-83c7-183f04c60bdd', 75);
+INSERT INTO "RecipeIngredient" ("Id", "RecipeId", "ProductionItemId", "RequiredPerMinute") VALUES ('56d3fb8e-72ca-4035-b1dc-870001ac00f9', '4e115703-b411-45f4-8af2-e81f94bd0d23', '0b614cb1-e391-4439-ade3-d21a41b64a07', 1.875);
+INSERT INTO "RecipeResult" ("Id", "RecipeId", "ProductionItemId", "ProducedPerMinute") VALUES ('259c9489-f40a-4ac3-a99b-4231500a7068', '4e115703-b411-45f4-8af2-e81f94bd0d23', 'cab1485d-6922-4a22-ac27-044ecf0899c1', 7.5);
