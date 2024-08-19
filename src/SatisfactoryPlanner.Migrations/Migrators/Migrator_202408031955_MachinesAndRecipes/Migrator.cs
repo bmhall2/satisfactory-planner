@@ -11,9 +11,9 @@ public class Migrator_202408031955_MachinesAndRecipes : Migration
             .AddColumn("RecipeId").AsGuid()
             .AddColumn("ClockSpeed").AsDecimal();
         
-        Create.ForeignKey()
-            .FromTable("Machine").ForeignColumn("RecipeId")
-            .ToTable("Recipe").PrimaryColumn("Id");
+        // Create.ForeignKey()
+        //     .FromTable("Machine").ForeignColumn("RecipeId")
+        //     .ToTable("Recipe").PrimaryColumn("Id");
 
         Alter.Table("Recipe")
             .AddColumn("MadeIn").AsInt16();
