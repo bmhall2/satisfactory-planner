@@ -16,18 +16,9 @@ public class FactoryController(
     IMapper _mapper) : ControllerBase
 {
     [HttpGet()]
-    public ActionResult<IEnumerable<Factory>> Search([FromQuery] Guid? playthroughId)
+    public ActionResult<IEnumerable<FactoryResponseModel>> Search([FromQuery] Guid? playthroughId)
     {        
-        var query = _applicationContext
-                        .Factories
-                        .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
-                        .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-                        .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
-                        .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
-                        .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
-                        .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
-                        .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
-                        .AsQueryable();
+        var query = GetFactoryQueryable();
 
         if (playthroughId.HasValue)
         {
@@ -36,21 +27,14 @@ public class FactoryController(
 
         var results = query.ToList();
 
-        return results;
+        return _mapper.Map<List<FactoryResponseModel>>(results);
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Factory> Get(Guid id)
+    public ActionResult<FactoryResponseModel> Get(Guid id)
     {        
-        var factory = _applicationContext.Factories
+        var factory = GetFactoryQueryable()
             .Where(p => p.Id == id)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
-            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
-            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
             .FirstOrDefault();
         
         if (factory == null)
@@ -62,21 +46,14 @@ public class FactoryController(
                             .ThenByDescending(m => m.ClockSpeed)
                             .ToList();
 
-        return factory;
+        return _mapper.Map<FactoryResponseModel>(factory);
     }
 
     [HttpGet("{id}/Summary")]
     public ActionResult<FactorySummaryResponseModel> GetSummary(Guid id)
     {        
-        var factory = _applicationContext.Factories
+        var factory = GetFactoryQueryable()
             .Where(p => p.Id == id)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
-            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
-            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
             .FirstOrDefault();
         
         if (factory == null)
@@ -104,7 +81,7 @@ public class FactoryController(
     }
 
     [HttpPost]
-    public ActionResult<Factory> Create([FromQuery] Guid playthroughId, [FromQuery] string name)
+    public ActionResult<FactoryResponseModel> Create([FromQuery] Guid playthroughId, [FromQuery] string name)
     {
         var factory = new Factory()
         {
@@ -116,21 +93,14 @@ public class FactoryController(
         _applicationContext.Factories.Add(factory);
         _applicationContext.SaveChanges();
 
-        return factory;
+        return _mapper.Map<FactoryResponseModel>(factory);
     }
 
     [HttpDelete("{id}")]
     public ActionResult Delete(Guid id)
     {
-        var factory = _applicationContext.Factories
+        var factory = GetFactoryQueryable()
             .Where(p => p.Id == id)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
-            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
-            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
-            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
-            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
-            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory)
             .SingleOrDefault();
         
         if (factory is null)
@@ -142,5 +112,17 @@ public class FactoryController(
         _applicationContext.SaveChanges();
 
         return Ok();
+    }
+
+    private IQueryable<Factory> GetFactoryQueryable()
+    {
+        return _applicationContext.Factories
+            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Ingredients).ThenInclude(i => i.ProductionItem)
+            .Include(f => f.Machines).ThenInclude(m => m.Recipe).ThenInclude(r => r.Results).ThenInclude(r => r.ProductionItem)
+            .Include(f => f.Extractors).ThenInclude(e => e.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ProductionItem)
+            .Include(f => f.ExportConnections).ThenInclude(ec => ec.ImportingFactory)
+            .Include(f => f.ImportConnections).ThenInclude(ic => ic.ProductionItem)
+            .Include(f => f.ImportConnections).ThenInclude(ec => ec.ExportingFactory);
     }
 }

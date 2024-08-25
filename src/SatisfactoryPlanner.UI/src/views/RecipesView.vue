@@ -29,7 +29,7 @@ async function fetchData() {
         <div v-for="recipe in recipes.filter((r) => r.name.toLowerCase().includes(recipeSearchTerm.toLowerCase()))">
           <RouterLink class="recipe" :to="{ name: 'Recipe', params: { id: recipe.id } }">
             <div>{{ recipe.name }}</div>
-            <img class="recipe-image"
+            <img class="recipe-image" v-if="recipe.results[0]"
               :src="`/src/assets/images/production-items/${recipe.results[0].productionItem.name}.png`" />
           </RouterLink>
         </div>

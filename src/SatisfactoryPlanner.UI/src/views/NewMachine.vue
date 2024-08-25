@@ -26,6 +26,9 @@
     "Packager" : "Packager",
     "Blender" : "Blender",
     "ParticleAccelerator" : "Particle Accelerator",
+    "BiomassBurner" : "Biomass Burner",
+    "CoalGenerator" : "Coal Generator",
+    "FuelGenerator" : "Fuel Generator",
     "NuclearPowerPlant" : "Nuclear Power Plant"
   }
 

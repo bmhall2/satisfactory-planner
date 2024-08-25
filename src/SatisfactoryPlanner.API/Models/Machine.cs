@@ -30,5 +30,8 @@ public enum MachineType
     Packager,
     Blender,
     ParticleAccelerator,
+    BiomassBurner,
+    CoalGenerator,
+    FuelGenerator,
     NuclearPowerPlant
 }

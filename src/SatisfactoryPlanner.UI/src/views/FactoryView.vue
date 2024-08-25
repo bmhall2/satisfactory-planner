@@ -95,6 +95,36 @@ async function remove() {
 
         </div>
 
+        <div>
+                <div class="section-name">Power Generators</div>
+                <div class="factory-list">
+                    <div v-for="machine in factory.powerGenerators">
+                        <RouterLink class="factory-object"
+                            :to="{ name: 'Machine', params: { factoryId: props.id, id: machine.id } }">
+
+                            <div>{{ machine.machineType }}</div>
+
+                            <img class="factory-object-image"
+                                :src="`/src/assets/images/machines/${machine.machineType}.png`" />
+
+                            <div class="factory-object-result-list">
+
+                                <div v-for="result in machine.recipe.results">
+                                    <img class="factory-output-image"
+                                        :src="`/src/assets/images/production-items/${result.productionItem.name}.png`" />
+                                </div>
+
+                            </div>
+
+                        </RouterLink>
+                    </div>
+                    <RouterLink class="factory-object" :to="{ name: 'NewMachine', params: { factoryId: factory.id } }">
+                        <div>New Machine</div>
+                        <img class="factory-object-image" :src="`/src/assets/images/plus.png`" />
+                    </RouterLink>
+                </div>
+            </div>
+
         <div v-if="summary" class="factory-section">
 
             <div class="header-name">Summary</div>

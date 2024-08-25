@@ -28,7 +28,10 @@ const machineTypes = {
     7: "Packager",
     8: "Blender",
     9: "Particle Accelerator",
-    10: "Nuclear Power Plant"
+    10: "Biomass Burner",
+    11: "Coal Generator",
+    12: "Fuel Generator",
+    13: "Nuclear Power Plant"
 }
 
 watchEffect(
