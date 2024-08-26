@@ -76,6 +76,7 @@ public class FactoryController(
         response.ExtractorOutputs = summary.ExtractorOutputs;
         response.Imports = summary.Imports;
         response.Exports = summary.Exports;
+        response.PowerSummary = summary.PowerSummary;
 
         return response;
     }

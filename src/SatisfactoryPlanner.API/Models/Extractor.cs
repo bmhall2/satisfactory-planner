@@ -62,4 +62,32 @@ public static class ExtractorExtensions
 
         return 0;
     }
+
+    public static decimal Power(this Extractor extractor)
+    {
+        switch (extractor.ExtractorType)
+        {
+            case ExtractorType.MinerMk1:
+                return -5 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.MinerMk2:
+                return -12 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.MinerMk3:
+                return -30 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.OilExtractor:
+                return -40 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.WaterExtractor:
+                return -20 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.ResourceWellPressurizer:
+                return -150 * ProductionClockAdjustment(extractor.ClockSpeed);
+            case ExtractorType.ResourceWellExtractor:
+                return 0;
+        }
+
+        return 0;
+    }
+
+    private static decimal ProductionClockAdjustment(decimal clockSpeed)
+    {
+        return (decimal) Math.Pow((double)clockSpeed, 1.321928);
+    }
 }

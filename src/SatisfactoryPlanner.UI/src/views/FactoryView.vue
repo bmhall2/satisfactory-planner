@@ -93,9 +93,7 @@ async function remove() {
                 </div>
             </div>
 
-        </div>
-
-        <div>
+            <div>
                 <div class="section-name">Power Generators</div>
                 <div class="factory-list">
                     <div v-for="machine in factory.powerGenerators">
@@ -124,6 +122,8 @@ async function remove() {
                     </RouterLink>
                 </div>
             </div>
+
+        </div>
 
         <div v-if="summary" class="factory-section">
 

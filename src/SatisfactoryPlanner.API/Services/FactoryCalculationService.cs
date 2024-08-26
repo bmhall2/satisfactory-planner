@@ -10,6 +10,7 @@ public class FactorySummary
     public List<ExtractorOutputSummary> ExtractorOutputs { get; set; } = new List<ExtractorOutputSummary>();
     public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
     public List<ExportSummary> Exports { get; set; } = new List<ExportSummary>();
+    public PowerSummary PowerSummary { get; set;} = new PowerSummary();
 }
 
 public class MachineOutputSummary
@@ -19,6 +20,8 @@ public class MachineOutputSummary
     public required RecipeOutputSummary RecipeOutput { get; set;}
 
     public required decimal ClockSpeed { get; set; } = 1;
+
+    public required decimal Power { get; set; } = 0;
 }
 
 public class ExtractorOutputSummary
@@ -65,6 +68,15 @@ public class ResultOutputSummary
     public required decimal ProducedPerMinute { get; set; }
 }
 
+public class PowerSummary
+{
+    public decimal Generated { get; set; } = 0;
+
+    public decimal Consumed { get; set; } = 0;
+
+    public decimal Total { get; set; } = 0;
+}
+
 public interface IFactoryCalculationService
 {
     FactorySummary CalculateSummary(Factory factory);
@@ -88,7 +100,8 @@ public class FactoryCalculationService(
                     Name = machine.Recipe.Name,
                     IngredientOutputs = new List<IngredientOutputSummary>(),
                     ResultOutputs = new List<ResultOutputSummary>()
-                }
+                },
+                Power = machine.Power()
             };
 
             foreach (var result in machine.Recipe.Results)
@@ -188,7 +201,13 @@ public class FactoryCalculationService(
             MachineOutputs = machineOutputs,
             ExtractorOutputs = extractorOutputs,
             Imports = imports,
-            Exports = exports
+            Exports = exports,
+            PowerSummary = new PowerSummary()
+            {
+                Generated = machineOutputs.Where(mo => mo.Power > 0).Sum(mo => mo.Power),
+                Consumed = machineOutputs.Where(mo => mo.Power < 0).Sum(mo => mo.Power),
+                Total = machineOutputs.Sum(mo => mo.Power)
+            }
         };
     }
 }

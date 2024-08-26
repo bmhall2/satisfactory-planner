@@ -20,6 +20,8 @@ public class FactorySummaryResponseModel
     public List<ImportSummary> Imports { get; set; } = new List<ImportSummary>();
     
     public List<ExportSummary> Exports { get; set; } = new List<ExportSummary>();
+
+    public PowerSummary PowerSummary { get; set;} = new PowerSummary();
 }
 
 public class FactorySummaryTotalModel
